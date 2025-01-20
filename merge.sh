@@ -1,0 +1,1 @@
+cd src/airpower && git checkout wechat && git pull && git checkout uniapp && git merge wechat && git push

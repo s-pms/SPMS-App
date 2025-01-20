@@ -1,0 +1,20 @@
+{
+	"pages": [
+		{
+			"path": "view/index",
+			"style": {
+				"navigationBarTitleText": "AirPower"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "AirPower",
+		"navigationBarBackgroundColor": "#cbe4fa",
+		"backgroundColor": "#ffffff",
+		"app-plus": {
+			"scrollIndicator": "none",
+			"softinputNavBar": "none"
+		}
+	}
+}
