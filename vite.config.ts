@@ -11,4 +11,18 @@ export default defineConfig({
       keep_fnames: true,
     },
   },
+  server: {
+    open: true,
+    host: '0.0.0.0',
+    port: 3000,
+    https: false,
+    proxy: {
+      '/api': {
+        target: 'http://10.149.4.10:8080/',
+        rewrite: (path) => path.replace(/^\/api/, ''),
+        changeOrigin: true,
+      },
+      '/oauth2': 'http://127.0.0.1:8080',
+    },
+  },
 })

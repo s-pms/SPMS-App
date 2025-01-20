@@ -62,37 +62,13 @@ export class UserEntity extends BaseEntity {
   })
     gender!: number
 
-  declare isDisabled: boolean
-
   /**
    * ### 验证码
    */
   code!: string
 
-  /**
-   * ### 所属应用AppKey
-   */
-  appKey!: string
-
-  /**
-   * ### 旧密码
-   */
-  oldPassword!: string
-
   @Field({
     label: '个人签名',
   })
     bio!: string
-
-  departmentId?: number
-
-  /**
-   * ### 设置邮箱
-   * @param email 邮箱
-   * @returns
-   */
-  setEmail(email: string): this {
-    this.email = email
-    return this
-  }
 }

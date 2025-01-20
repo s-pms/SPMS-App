@@ -1,20 +1,75 @@
 {
-	"pages": [
-		{
-			"path": "view/index",
-			"style": {
-				"navigationBarTitleText": "AirPower"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "AirPower",
-		"navigationBarBackgroundColor": "#cbe4fa",
-		"backgroundColor": "#ffffff",
-		"app-plus": {
-			"scrollIndicator": "none",
-			"softinputNavBar": "none"
-		}
-	}
+  "pages": [
+    {
+      "path": "view/work",
+      "style": {
+        "navigationBarTitleText": "工作"
+      }
+    },
+    {
+      "path": "view/message",
+      "style": {
+        "navigationBarTitleText": "消息"
+      }
+    },
+    {
+      "path": "view/setting",
+      "style": {
+        "navigationBarTitleText": "设置"
+      }
+    },
+    {
+      "path": "view/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    }
+  ],
+  "tabBar": {
+    "blurEffect": "light",
+    "backgroundColor": "#fff",
+    "borderStyle": "#f8f8f8",
+    "selectedColor": "#60AC72",
+    "height": "55",
+    "fontSize": "12",
+    "spacing": "5",
+    "list": [
+      {
+        "iconPath": "static/img/tabbar/tabbar-home.png",
+        "selectedIconPath": "static/img/tabbar/tabbar-home-active.png",
+        "pagePath": "view/work",
+        "text": "工作"
+      },
+      {
+        "iconPath": "static/img/tabbar/tabbar-more.png",
+        "selectedIconPath": "static/img/tabbar/tabbar-more-active.png",
+        "pagePath": "view/message",
+        "text": "消息"
+      },
+      {
+        "iconPath": "static/img/tabbar/tabbar-mine.png",
+        "selectedIconPath": "static/img/tabbar/tabbar-mine-active.png",
+        "pagePath": "view/setting",
+        "text": "设置"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "SPMS",
+    "navigationBarBackgroundColor": "#60AC72",
+    "backgroundColor": "#f8f8f8",
+    "backgroundColorTop": "#f8f8f8",
+    "backgroundColorBottom": "#f8f8f8",
+    "app-plus": {
+      "scrollIndicator": "none",
+      "softinputNavBar": "none",
+      "safearea": {
+        "background": "#ff0000",
+        "bottom": {
+          "offset": "auto"
+        }
+      }
+    }
+  }
 }

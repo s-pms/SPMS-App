@@ -1,15 +1,23 @@
 import '@/airpower/assets/css/airpower.scss'
-import '@/airpower/assets/css/weui.scss'
 import '@/static/css/main.scss'
 
 import { createSSRApp } from 'vue'
 import App from './App.vue'
 import { AirConfig } from '@/airpower/config/AirConfig'
+import { AirApi } from '@/airpower/config/AirApi.ts'
 
-const rootUrl = 'http://127.0.0.1:8080/'
+if (true) {
+  const rootUrl = 'http://10.149.4.10:8080/'
 
-AirConfig.apiUrl = `${rootUrl}api/`
-AirConfig.staticUrl = `${rootUrl}upload/`
+  AirConfig.apiUrl = `${rootUrl}`
+  AirConfig.staticUrl = `${rootUrl}upload/`
+} else {
+  AirConfig.apiUrl = '/api/'
+}
+
+AirConfig.login = () => {
+  AirApi.navigateTo('/view/login')
+}
 
 export function createApp() {
   const app = createSSRApp(App)

@@ -1,3 +1,8 @@
-* {
-  --primary-color: #2a5c90;
+body {
+  --primary-color: #60AC72;
+  --primary-color-bg: #60AC7210;
+}
+
+uni-button[type='primary'] {
+  background-color: var(--primary-color) !important;
 }

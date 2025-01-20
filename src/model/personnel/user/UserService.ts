@@ -35,7 +35,6 @@ export class UserService extends AbstractBaseService<UserEntity> {
    */
   async sendEmail(user: UserEntity): Promise<void> {
     await this.api('sendEmail')
-      .setTimeout(10000)
       .post(user)
   }
 
