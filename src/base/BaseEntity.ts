@@ -1,50 +1,32 @@
 import { AirEntity } from '@/airpower/base/AirEntity'
-import { AirDateTimeFormatter } from '@/airpower/enum/AirDateTimeFormatter'
-import { AirDateTime } from '@/airpower/helper/AirDateTime'
+import { Field, Model } from '@/airpower/decorator'
+import { PublishStatusEnum } from '@/model/common/PublishStatusEnum'
 
 /**
  * # 数据库实体基类
- * @author Hamm
+ * @author Hamm.cn
  */
+
+@Model({
+  addChildPermission: 'add',
+})
 export class BaseEntity extends AirEntity {
+  @Field({
+    label: '发布状态',
+    type: Boolean,
+    dictionary: PublishStatusEnum,
+  })
+    isPublished!: boolean
 
-  /**
-   * # 创建时间
-   */
-  createtime!: number
+  @Field({
+    label: '创建时间',
+    type: Number,
+  })
+    createTime!: number
 
-  /**
-   * # 修改时间
-   */
-  updatetime!: number
-
-  /**
-   * # 获取格式化后的创建时间
-   * @param formatter [可选]自定义格式化模板
-   */
-  getCreateTime(formatter?: AirDateTimeFormatter | string): string {
-    return AirDateTime.formatFromSecond(this.createtime, formatter)
-  }
-
-  /**
-   * # 获取相对于现在的创建时间
-   */
-  getCreateTimeFriendly() {
-    return AirDateTime.getFriendlyDateTime(this.createtime * 1000)
-  }
-
-  /**
-   * # 获取格式化后的修改时间
-   * @param formatter [可选]自定义格式化模板
-   */
-  getUpdateTime(formatter?: AirDateTimeFormatter | string): string {
-    return AirDateTime.formatFromSecond(this.updatetime, formatter)
-  }
-
-  /**
-   * # 获取相对于现在的修改时间
-   */
-  getUpdatetimeFriendly() {
-    return AirDateTime.getFriendlyDateTime(this.createtime * 1000)
-  }
+  @Field({
+    label: '更新时间',
+    type: Number,
+  })
+    updateTime!: number
 }

@@ -6,7 +6,7 @@ import { createSSRApp } from 'vue'
 import App from './App.vue'
 import { AirConfig } from '@/airpower/config/AirConfig'
 
-const rootUrl = 'https://service.hamm.cn/'
+const rootUrl = 'http://127.0.0.1:8080/'
 
 AirConfig.apiUrl = `${rootUrl}api/`
 AirConfig.staticUrl = `${rootUrl}upload/`
