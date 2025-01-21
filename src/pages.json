@@ -32,6 +32,41 @@
         "navigationBarTitleText": "物料列表",
         "enablePullDownRefresh": true
       }
+    },
+    {
+      "path": "view/asset/device/list",
+      "style": {
+        "navigationBarTitleText": "设备管理",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "view/channel/supplier/list",
+      "style": {
+        "navigationBarTitleText": "供应商列表",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "view/channel/customer/list",
+      "style": {
+        "navigationBarTitleText": "客户列表",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "view/channel/purchase/list",
+      "style": {
+        "navigationBarTitleText": "采购管理",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "view/channel/sale/list",
+      "style": {
+        "navigationBarTitleText": "采购管理",
+        "enablePullDownRefresh": true
+      }
     }
   ],
   "tabBar": {

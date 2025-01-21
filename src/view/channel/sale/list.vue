@@ -4,16 +4,16 @@
       <ACard
         v-for="item in list"
         :key="item.id"
-        :badge="MaterialTypeEnum.getLabel(item.materialType)"
-        :badge-color="MaterialTypeEnum.getColor(item.materialType)"
-        :desc="item.code"
-        :title="item.name"
+        :badge="SaleStatusEnum.getLabel(item.status)"
+        :badge-color="SaleStatusEnum.getColor(item.status)"
+        :desc="item.reason"
+        :title="item.billCode"
       >
-        <ACardCell label="计量单位">
-          {{ item.unit.name }}
+        <ACardCell label="总金额">
+          ¥{{ item.totalPrice.toFixed(2) }}
         </ACardCell>
-        <ACardCell label="规格型号">
-          {{ item.spc || '-' }}
+        <ACardCell label="客户">
+          {{ item.customer.name }}
         </ACardCell>
       </ACard>
     </APage>
@@ -26,13 +26,13 @@ import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
 import { useAirTable } from '@/airpower/hook/useAirTable'
-import { MaterialEntity } from '@/model/asset/material/MaterialEntity'
-import { MaterialService } from '@/model/asset/material/MaterialService'
-import { MaterialTypeEnum } from '@/model/asset/material/MaterialTypeEnum'
+import { SaleEntity } from '@/model/channel/sale/SaleEntity.ts'
+import { SaleService } from '@/model/channel/sale/SaleService.ts'
+import { SaleStatusEnum } from '@/model/channel/sale/SaleStatusEnum.ts'
 
 const {
   response, list, onReloadData, onLoadMore,
-} = useAirTable(MaterialEntity, MaterialService)
+} = useAirTable(SaleEntity, SaleService)
 
 onPullDownRefresh(() => onReloadData())
 onReachBottom(() => onLoadMore())

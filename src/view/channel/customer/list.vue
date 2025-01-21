@@ -4,16 +4,11 @@
       <ACard
         v-for="item in list"
         :key="item.id"
-        :badge="MaterialTypeEnum.getLabel(item.materialType)"
-        :badge-color="MaterialTypeEnum.getColor(item.materialType)"
         :desc="item.code"
         :title="item.name"
       >
-        <ACardCell label="计量单位">
-          {{ item.unit.name }}
-        </ACardCell>
-        <ACardCell label="规格型号">
-          {{ item.spc || '-' }}
+        <ACardCell label="联系电话">
+          {{ item.phone }}
         </ACardCell>
       </ACard>
     </APage>
@@ -26,13 +21,12 @@ import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
 import { useAirTable } from '@/airpower/hook/useAirTable'
-import { MaterialEntity } from '@/model/asset/material/MaterialEntity'
-import { MaterialService } from '@/model/asset/material/MaterialService'
-import { MaterialTypeEnum } from '@/model/asset/material/MaterialTypeEnum'
+import { CustomerEntity } from '@/model/channel/customer/CustomerEntity.ts'
+import { CustomerService } from '@/model/channel/customer/CustomerService.ts'
 
 const {
   response, list, onReloadData, onLoadMore,
-} = useAirTable(MaterialEntity, MaterialService)
+} = useAirTable(CustomerEntity, CustomerService)
 
 onPullDownRefresh(() => onReloadData())
 onReachBottom(() => onLoadMore())
