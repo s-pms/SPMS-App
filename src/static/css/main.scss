@@ -1,8 +1,22 @@
 body {
-  --primary-color: #60AC72;
-  --primary-color-bg: #60AC7210;
+  --primary-color: #60ac72;
+  --primary-color-bg: #60ac7210;
+  --danger-color: #f56c6c;
+  --danger-color-bg: #f56c6c10;
 }
 
-uni-button[type='primary'] {
+uni-button {
+  box-sizing: border-box !important;
   background-color: var(--primary-color) !important;
+  color: white !important;
+}
+uni-button:after {
+  border: none !important;
+}
+uni-button[type="button"] {
+  background-color: var(--primary-color-bg) !important;
+  color: var(--primary-color) !important;
+}
+uni-button[type="reset"] {
+  background-color: var(--danger-color) !important;
 }

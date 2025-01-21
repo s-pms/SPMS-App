@@ -54,6 +54,7 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-4050120250118001",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-4050120250118001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-4050120250118001",
+    "@dcloudio/uts-darwin-x64": "^3.0.0-alpha-3040820220424005",
     "@dcloudio/uvm": "^0.3.1",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-4050120250118001",
     "@types/crypto-js": "^4.2.2",

@@ -1,34 +1,38 @@
 <template>
-  <template
-    v-for="module in moduleList"
-    :key="module.id"
-  >
-    <view
-      v-if="module.children?.length>0"
-      class="module-item"
+  <ABody tabbar>
+    <template
+      v-for="module in moduleList"
+      :key="module.id"
     >
-      <div class="module-title">
-        {{ module.name }}
-      </div>
-      <view class="module-menu-list">
-        <view
-          v-for="menu in module.children"
-          :key="menu.id"
-          class="menu-item"
-        >
-          {{ menu.name }}
+      <view
+        v-if="module.children?.length>0"
+        class="module-item"
+      >
+        <view class="module-title">
+          {{ module.name }}
+        </view>
+        <view class="module-menu-list">
+          <view
+            v-for="menu in module.children"
+            :key="menu.id"
+            class="menu-item"
+            @click="openMenu(menu)"
+          >
+            {{ menu.name }}
+          </view>
         </view>
       </view>
-    </view>
-  </template>
+    </template>
+  </ABody>
 </template>
 
 <script lang="ts" setup>
 import { onShow } from '@dcloudio/uni-app'
 import { ref } from 'vue'
-import { AppConfig } from '@/config/AppConfig.ts'
-import { UserService } from '@/model/personnel/user/UserService.ts'
-import { MenuEntity } from '@/model/system/menu/MenuEntity.ts'
+import { AppConfig } from '@/config/AppConfig'
+import { UserService } from '@/model/personnel/user/UserService'
+import { MenuEntity } from '@/model/system/menu/MenuEntity'
+import { ABody } from '@/airpower/components'
 
 const moduleList = ref<MenuEntity[]>([])
 
@@ -40,6 +44,13 @@ async function init() {
 onShow(() => {
   init()
 })
+
+function openMenu(menu: MenuEntity) {
+  uni.navigateTo({
+    url: menu.path.replace('/console/', '/view/'),
+  })
+}
+
 </script>
 
 <style lang="scss">

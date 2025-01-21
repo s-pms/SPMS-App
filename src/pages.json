@@ -21,14 +21,22 @@
     {
       "path": "view/login",
       "style": {
-        "navigationBarTitleText": "登录"
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "dark"
+      }
+    },
+    {
+      "path": "view/asset/material/list",
+      "style": {
+        "navigationBarTitleText": "物料列表",
+        "enablePullDownRefresh": true
       }
     }
   ],
   "tabBar": {
     "blurEffect": "light",
-    "backgroundColor": "#fff",
-    "borderStyle": "#f8f8f8",
+    "borderStyle": "#eee",
     "selectedColor": "#60AC72",
     "height": "55",
     "fontSize": "12",
@@ -58,16 +66,16 @@
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "SPMS",
     "navigationBarBackgroundColor": "#60AC72",
-    "backgroundColor": "#f8f8f8",
-    "backgroundColorTop": "#f8f8f8",
-    "backgroundColorBottom": "#f8f8f8",
+    "backgroundColor": "#f5f5f5",
+    "backgroundColorTop": "#f5f5f5",
+    "backgroundColorBottom": "#f5f5f5",
     "app-plus": {
       "scrollIndicator": "none",
       "softinputNavBar": "none",
       "safearea": {
-        "background": "#ff0000",
+        "background": "rgba(255,255,255,0.9)",
         "bottom": {
-          "offset": "auto"
+          "offset": "none"
         }
       }
     }

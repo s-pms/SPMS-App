@@ -6,8 +6,10 @@ import App from './App.vue'
 import { AirConfig } from '@/airpower/config/AirConfig'
 import { AirApi } from '@/airpower/config/AirApi.ts'
 
-if (true) {
-  const rootUrl = 'http://10.149.4.10:8080/'
+const system = uni.getSystemInfoSync()
+
+if (system.uniPlatform !== 'web') {
+  const rootUrl = 'http://10.0.0.6:8080/'
 
   AirConfig.apiUrl = `${rootUrl}`
   AirConfig.staticUrl = `${rootUrl}upload/`
@@ -16,7 +18,7 @@ if (true) {
 }
 
 AirConfig.login = () => {
-  AirApi.navigateTo('/view/login')
+  AirApi.redirect('/view/login')
 }
 
 export function createApp() {
