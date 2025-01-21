@@ -8,6 +8,7 @@
         :badge-color="MaterialTypeEnum.getColor(item.materialType)"
         :desc="item.code"
         :title="item.name"
+        @click="onAction(item)"
       >
         <ACardCell label="计量单位">
           {{ item.unit.name }}
@@ -29,10 +30,11 @@ import { useAirTable } from '@/airpower/hook/useAirTable'
 import { MaterialEntity } from '@/model/asset/material/MaterialEntity'
 import { MaterialService } from '@/model/asset/material/MaterialService'
 import { MaterialTypeEnum } from '@/model/asset/material/MaterialTypeEnum'
+import { useTable } from '@/hook/useTable'
 
 const {
-  response, list, onReloadData, onLoadMore,
-} = useAirTable(MaterialEntity, MaterialService)
+  response, list, onReloadData, onLoadMore, onAction,
+} = useTable(MaterialEntity, MaterialService)
 
 onPullDownRefresh(() => onReloadData())
 onReachBottom(() => onLoadMore())

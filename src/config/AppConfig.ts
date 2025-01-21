@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { UserEntity } from '@/model/personnel/user/UserEntity.ts'
+import { UserEntity } from '@/model/personnel/user/UserEntity'
 
 /**
  * # 项目全局配置文件

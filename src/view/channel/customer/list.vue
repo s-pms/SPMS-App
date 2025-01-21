@@ -21,8 +21,8 @@ import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
 import { useAirTable } from '@/airpower/hook/useAirTable'
-import { CustomerEntity } from '@/model/channel/customer/CustomerEntity.ts'
-import { CustomerService } from '@/model/channel/customer/CustomerService.ts'
+import { CustomerEntity } from '@/model/channel/customer/CustomerEntity'
+import { CustomerService } from '@/model/channel/customer/CustomerService'
 
 const {
   response, list, onReloadData, onLoadMore,

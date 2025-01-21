@@ -6,6 +6,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "verbatimModuleSyntax": false,
+    "moduleResolution": "node",
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {

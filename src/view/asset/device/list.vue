@@ -8,6 +8,8 @@
         :badge-color="DeviceStatusEnum.getColor(item.status)"
         :desc="item.code"
         :title="item.name"
+        :disabled="item.isDisabled"
+        @click="onAction(item)"
       >
         <ACardCell label="UUID">
           {{ item.uuid || '-' }}
@@ -34,16 +36,16 @@ import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
-import { useAirTable } from '@/airpower/hook/useAirTable'
-import { DeviceEntity } from '@/model/asset/device/DeviceEntity.ts'
-import { DeviceService } from '@/model/asset/device/DeviceService.ts'
-import { DeviceStatusEnum } from '@/model/asset/device/DeviceStatusEnum.ts'
-import { BooleanYesNoDictionary } from '@/model/common/BooleanYesNoDictionary.ts'
-import { AlarmStatusEnum } from '@/model/asset/device/AlarmStatusEnum.ts'
+import { DeviceEntity } from '@/model/asset/device/DeviceEntity'
+import { DeviceService } from '@/model/asset/device/DeviceService'
+import { DeviceStatusEnum } from '@/model/asset/device/DeviceStatusEnum'
+import { BooleanYesNoDictionary } from '@/model/common/BooleanYesNoDictionary'
+import { AlarmStatusEnum } from '@/model/asset/device/AlarmStatusEnum'
+import { useTable } from '@/hook/useTable'
 
 const {
-  response, list, onReloadData, onLoadMore,
-} = useAirTable(DeviceEntity, DeviceService)
+  response, list, onReloadData, onLoadMore, onAction,
+} = useTable(DeviceEntity, DeviceService)
 
 onPullDownRefresh(() => onReloadData())
 onReachBottom(() => onLoadMore())

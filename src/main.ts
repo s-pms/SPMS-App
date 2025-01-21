@@ -4,7 +4,7 @@ import '@/static/css/main.scss'
 import { createSSRApp } from 'vue'
 import App from './App.vue'
 import { AirConfig } from '@/airpower/config/AirConfig'
-import { AirApi } from '@/airpower/config/AirApi.ts'
+import { AirApi } from '@/airpower/config/AirApi'
 
 const system = uni.getSystemInfoSync()
 

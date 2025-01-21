@@ -52,8 +52,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { UserEntity } from '@/model/personnel/user/UserEntity'
-import { UserService } from '@/model/personnel/user/UserService.ts'
-import { AirConfig } from '@/airpower/config/AirConfig.ts'
+import { UserService } from '@/model/personnel/user/UserService'
+import { AirConfig } from '@/airpower/config/AirConfig'
 import { ABody } from '@/airpower/components'
 
 const user = ref(new UserEntity())

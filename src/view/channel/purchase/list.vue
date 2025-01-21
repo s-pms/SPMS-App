@@ -8,6 +8,8 @@
         :badge-color="PurchaseStatusEnum.getColor(item.status)"
         :desc="item.reason"
         :title="item.billCode"
+        :disabled="item.isDisabled"
+        @click="onAction(item)"
       >
         <ACardCell label="总金额">
           ¥{{ item.totalPrice.toFixed(2) }}
@@ -25,14 +27,15 @@ import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
-import { useAirTable } from '@/airpower/hook/useAirTable'
-import { PurchaseEntity } from '@/model/channel/purchase/PurchaseEntity.ts'
-import { PurchaseService } from '@/model/channel/purchase/PurchaseService.ts'
-import { PurchaseStatusEnum } from '@/model/channel/purchase/PurchaseStatusEnum.ts'
+import { useBillTable } from '@/hook/billTable/useBillTable'
+import { PurchaseEntity } from '@/model/channel/purchase/PurchaseEntity'
+import { PurchaseService } from '@/model/channel/purchase/PurchaseService'
+import { PurchaseStatusEnum } from '@/model/channel/purchase/PurchaseStatusEnum'
 
 const {
-  response, list, onReloadData, onLoadMore,
-} = useAirTable(PurchaseEntity, PurchaseService)
+  response, list, onReloadData, onLoadMore, onAction,
+} = useBillTable(PurchaseEntity, PurchaseService, {
+})
 
 onPullDownRefresh(() => onReloadData())
 onReachBottom(() => onLoadMore())

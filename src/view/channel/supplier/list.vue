@@ -21,8 +21,8 @@ import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
 import { useAirTable } from '@/airpower/hook/useAirTable'
-import { SupplierEntity } from '@/model/channel/supplier/SupplierEntity.ts'
-import { SupplierService } from '@/model/channel/supplier/SupplierService.ts'
+import { SupplierEntity } from '@/model/channel/supplier/SupplierEntity'
+import { SupplierService } from '@/model/channel/supplier/SupplierService'
 
 const {
   response, list, onReloadData, onLoadMore,

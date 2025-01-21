@@ -1,8 +1,8 @@
-import {Field} from '@/airpower/decorator'
-import {BaseEntity} from '../BaseEntity'
-import {AbstractBaseBillDetailEntity} from './detail/AbstractBaseBillDetailEntity'
-import {AirEnum} from '@/airpower/base/AirEnum'
-import {IPayload} from '@/airpower/interface/IPayload'
+import { Field } from '@/airpower/decorator'
+import { BaseEntity } from '../BaseEntity'
+import { AbstractBaseBillDetailEntity } from './detail/AbstractBaseBillDetailEntity'
+import { AirEnum } from '@/airpower/base/AirEnum'
+import { IPayload } from '@/airpower/interface/IPayload'
 
 /**
  * # 单据基类
@@ -15,7 +15,7 @@ export abstract class AbstractBaseBillEntity<
   @Field({
     label: '单据编号',
   })
-  billCode!: string
+    billCode!: string
 
   abstract status: number
 
@@ -27,22 +27,22 @@ export abstract class AbstractBaseBillEntity<
   @Field({
     label: '驳回原因',
   })
-  rejectReason!: string
+    rejectReason!: string
 
   /**
    * ### 审核中的状态
    */
-  abstract getAuditingStatus(): AirEnum;
+  public abstract getAuditingStatus(): AirEnum;
 
   /**
    * ### 已审核的状态
    */
-  abstract getAuditedStatus(): AirEnum;
+  public abstract getAuditedStatus(): AirEnum;
 
   /**
    * ### 已拒绝的状态
    */
-  abstract getRejectedStatus(): AirEnum;
+  public abstract getRejectedStatus(): AirEnum;
 
   getPayloadLabel(): string {
     return this.billCode

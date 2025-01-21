@@ -8,6 +8,7 @@
         :badge-color="SaleStatusEnum.getColor(item.status)"
         :desc="item.reason"
         :title="item.billCode"
+        @click="onAction"
       >
         <ACardCell label="总金额">
           ¥{{ item.totalPrice.toFixed(2) }}
@@ -25,14 +26,14 @@ import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
-import { useAirTable } from '@/airpower/hook/useAirTable'
-import { SaleEntity } from '@/model/channel/sale/SaleEntity.ts'
-import { SaleService } from '@/model/channel/sale/SaleService.ts'
-import { SaleStatusEnum } from '@/model/channel/sale/SaleStatusEnum.ts'
+import { SaleEntity } from '@/model/channel/sale/SaleEntity'
+import { SaleService } from '@/model/channel/sale/SaleService'
+import { SaleStatusEnum } from '@/model/channel/sale/SaleStatusEnum'
+import { useBillTable } from '@/hook/billTable/useBillTable'
 
 const {
-  response, list, onReloadData, onLoadMore,
-} = useAirTable(SaleEntity, SaleService)
+  response, list, onReloadData, onLoadMore, onAction,
+} = useBillTable(SaleEntity, SaleService)
 
 onPullDownRefresh(() => onReloadData())
 onReachBottom(() => onLoadMore())
