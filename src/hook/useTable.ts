@@ -33,8 +33,8 @@ export function useTable<
       case TableAction.PUBLISH.key:
         return option.showPublish
       default:
-        return true
     }
+    return true
   })
 
   const { actionFilter } = option
@@ -46,6 +46,8 @@ export function useTable<
           return !row.isPublished
         case AirTableAction.EDIT.key:
           return !row.isPublished
+        case AirTableAction.DELETE.key:
+          return !row.isPublished
         default:
       }
       return true
@@ -55,7 +57,6 @@ export function useTable<
     }
     return actions
   }
-
   const { onActionEvent } = option
   option.onActionEvent = (action: AirEnum, bill: E) => {
     switch (action.key) {

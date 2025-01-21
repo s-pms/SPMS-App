@@ -15,9 +15,9 @@
 <script lang="ts" setup>
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import { ABody, ACard, APage } from '@/airpower/components'
-import { useTable } from '@/hook/useTable.ts'
-import { RoutingEntity } from '@/model/mes/routing/RoutingEntity.ts'
-import { RoutingService } from '@/model/mes/routing/RoutingService.ts'
+import { useTable } from '@/hook/useTable'
+import { RoutingEntity } from '@/model/mes/routing/RoutingEntity'
+import { RoutingService } from '@/model/mes/routing/RoutingService'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

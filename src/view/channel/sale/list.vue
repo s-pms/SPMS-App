@@ -8,7 +8,7 @@
         :badge-color="SaleStatusEnum.getColor(item.status)"
         :desc="item.reason"
         :title="item.billCode"
-        @click="onAction"
+        @click="onAction(item)"
       >
         <ACardCell label="总金额">
           ¥{{ item.totalPrice.toFixed(2) }}

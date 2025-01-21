@@ -6,6 +6,7 @@
         :key="item.id"
         :desc="item.code"
         :title="item.name"
+        @click="onAction(item)"
       >
         <ACardCell label="联系电话">
           {{ item.phone }}
@@ -20,13 +21,13 @@ import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
-import { useAirTable } from '@/airpower/hook/useAirTable'
 import { CustomerEntity } from '@/model/channel/customer/CustomerEntity'
 import { CustomerService } from '@/model/channel/customer/CustomerService'
+import { useTable } from '@/hook/useTable'
 
 const {
-  response, list, onReloadData, onLoadMore,
-} = useAirTable(CustomerEntity, CustomerService)
+  response, list, onReloadData, onLoadMore, onAction,
+} = useTable(CustomerEntity, CustomerService)
 
 onPullDownRefresh(() => onReloadData())
 onReachBottom(() => onLoadMore())

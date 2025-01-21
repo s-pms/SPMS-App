@@ -15,7 +15,8 @@
     {
       "path": "view/setting",
       "style": {
-        "navigationBarTitleText": "设置"
+        "navigationBarTitleText": "设置",
+        "enablePullDownRefresh": false
       }
     },
     {
@@ -23,49 +24,98 @@
       "style": {
         "navigationBarTitleText": "",
         "navigationStyle": "custom",
-        "navigationBarTextStyle": "dark"
+        "navigationBarTextStyle": "dark",
+        "enablePullDownRefresh": false
       }
     },
     {
       "path": "view/asset/material/list",
       "style": {
-        "navigationBarTitleText": "物料列表",
-        "enablePullDownRefresh": true
+        "navigationBarTitleText": "物料列表"
       }
     },
     {
       "path": "view/asset/device/list",
       "style": {
-        "navigationBarTitleText": "设备管理",
-        "enablePullDownRefresh": true
+        "navigationBarTitleText": "设备管理"
       }
     },
     {
       "path": "view/channel/supplier/list",
       "style": {
-        "navigationBarTitleText": "供应商列表",
-        "enablePullDownRefresh": true
+        "navigationBarTitleText": "供应商列表"
       }
     },
     {
       "path": "view/channel/customer/list",
       "style": {
-        "navigationBarTitleText": "客户列表",
-        "enablePullDownRefresh": true
+        "navigationBarTitleText": "客户列表"
       }
     },
     {
       "path": "view/channel/purchase/list",
       "style": {
-        "navigationBarTitleText": "采购管理",
-        "enablePullDownRefresh": true
+        "navigationBarTitleText": "采购管理"
       }
     },
     {
       "path": "view/channel/sale/list",
       "style": {
-        "navigationBarTitleText": "采购管理",
-        "enablePullDownRefresh": true
+        "navigationBarTitleText": "销售管理"
+      }
+    },
+    {
+      "path": "view/wms/input/list",
+      "style": {
+        "navigationBarTitleText": "入库管理"
+      }
+    },
+    {
+      "path": "view/wms/output/list",
+      "style": {
+        "navigationBarTitleText": "出库管理"
+      }
+    },
+    {
+      "path": "view/wms/move/list",
+      "style": {
+        "navigationBarTitleText": "移库管理"
+      }
+    },
+    {
+      "path": "view/mes/bom/list",
+      "style": {
+        "navigationBarTitleText": "配方管理"
+      }
+    },
+    {
+      "path": "view/mes/operation/list",
+      "style": {
+        "navigationBarTitleText": "工序管理"
+      }
+    },
+    {
+      "path": "view/mes/order/list",
+      "style": {
+        "navigationBarTitleText": "订单管理"
+      }
+    },
+    {
+      "path": "view/mes/picking/list",
+      "style": {
+        "navigationBarTitleText": "物料领取"
+      }
+    },
+    {
+      "path": "view/mes/plan/list",
+      "style": {
+        "navigationBarTitleText": "生产计划"
+      }
+    },
+    {
+      "path": "view/mes/routing/list",
+      "style": {
+        "navigationBarTitleText": "生产工艺"
       }
     }
   ],
@@ -104,6 +154,7 @@
     "backgroundColor": "#f5f5f5",
     "backgroundColorTop": "#f5f5f5",
     "backgroundColorBottom": "#f5f5f5",
+    "enablePullDownRefresh": true,
     "app-plus": {
       "scrollIndicator": "none",
       "softinputNavBar": "none",
