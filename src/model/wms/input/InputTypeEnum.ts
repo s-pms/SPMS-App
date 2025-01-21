@@ -1,5 +1,5 @@
-import {AirColor} from '@/airpower/enum/AirColor'
-import {AirEnum} from '@/airpower/base/AirEnum'
+import { AirColor } from '@/airpower/enum/AirColor'
+import { AirEnum } from '@/airpower/base/AirEnum'
 
 /**
  * # 入库类型枚举字典
@@ -7,7 +7,7 @@ import {AirEnum} from '@/airpower/base/AirEnum'
  * @author Hamm.cn
  */
 export class InputTypeEnum extends AirEnum {
-  static readonly NORMAL = new InputTypeEnum(1, '普通入库', AirColor.WARNING)
+  static readonly NORMAL = new InputTypeEnum(1, '普通入库', AirColor.NORMAL)
 
   static readonly MOVE = new InputTypeEnum(2, '移动入库', AirColor.NORMAL)
 

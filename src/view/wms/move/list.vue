@@ -4,8 +4,8 @@
       <ACard
         v-for="item in list"
         :key="item.id"
-        :badge="OutputTypeEnum.getLabel(item.status)"
-        :badge-color="OutputTypeEnum.getColor(item.status)"
+        :badge="MoveStatusEnum.getLabel(item.status)"
+        :badge-color="MoveStatusEnum.getColor(item.status)"
         :desc="AirDateTime.formatFromMilliSecond(item.createTime)"
         :disabled="item.isDisabled"
         :title="item.billCode"
@@ -32,10 +32,10 @@ import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
 import { useBillTable } from '@/hook/billTable/useBillTable'
-import { OutputTypeEnum } from '@/model/wms/output/OutputTypeEnum'
 import { MoveService } from '@/model/wms/move/MoveService'
 import { MoveEntity } from '@/model/wms/move/MoveEntity'
 import { AirDateTime } from '@/airpower/helper/AirDateTime'
+import { MoveStatusEnum } from '@/model/wms/move/MoveStatusEnum'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

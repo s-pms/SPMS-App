@@ -8,6 +8,7 @@
         :badge-color="MaterialTypeEnum.getColor(item.materialType)"
         :desc="item.code"
         :title="item.name"
+        :disabled="item.isDisabled"
         @click="onAction(item)"
       >
         <ACardCell label="计量单位">

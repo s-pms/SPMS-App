@@ -8,6 +8,7 @@
         :badge-color="SaleStatusEnum.getColor(item.status)"
         :desc="item.reason"
         :title="item.billCode"
+        :disabled="item.isDisabled"
         @click="onAction(item)"
       >
         <ACardCell label="总金额">

@@ -1,11 +1,14 @@
 <template>
   <ABody tabbar>
+    <view class="banner">
+      <image src="/static/img/logo.svg" />
+    </view>
     <template
       v-for="module in moduleList"
       :key="module.id"
     >
       <view
-        v-if="module.children?.length>0"
+        v-if="module.children?.length > 0"
         class="module-item"
       >
         <view class="module-title">
@@ -27,7 +30,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onShow } from '@dcloudio/uni-app'
+import { onLoad, onPullDownRefresh } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 import { AppConfig } from '@/config/AppConfig'
 import { UserService } from '@/model/personnel/user/UserService'
@@ -41,7 +44,12 @@ async function init() {
   moduleList.value = await UserService.create().getMyMenuList()
 }
 
-onShow(() => {
+onLoad(() => {
+  init()
+})
+
+onPullDownRefresh(() => {
+  uni.stopPullDownRefresh()
   init()
 })
 
@@ -54,6 +62,23 @@ function openMenu(menu: MenuEntity) {
 </script>
 
 <style lang="scss">
+.banner {
+  margin: 10rpx;
+  padding: 10rpx 40rpx;
+  background-color: white;
+  border-radius: 40rpx;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  image {
+    width: 80%;
+    box-sizing: border-box;
+  }
+}
+
 .module-item {
   background-color: white;
   border-radius: 20rpx;
@@ -77,7 +102,7 @@ function openMenu(menu: MenuEntity) {
       margin: 8rpx;
       width: calc(33.3333333% - 16rpx);
       box-sizing: border-box;
-      font-size: 26rpx;
+      font-size: 28rpx;
       background-color: var(--primary-color-bg);
       text-align: center;
       height: 100rpx;
@@ -86,6 +111,7 @@ function openMenu(menu: MenuEntity) {
       align-items: center;
       border-radius: 20rpx;
       color: #666;
+      border: 2rpx solid var(--primary-color-bg);
     }
   }
 }

@@ -4,10 +4,11 @@
       <ACard
         v-for="item in list"
         :key="item.id"
-        :badge="item.isPublished?'已发布':'未发布'"
-        :badge-color="BooleanYesNoDictionary.getColor(item.isPublished)"
+        :badge="PublishStatusEnum.getLabel(item.isPublished)"
+        :badge-color="PublishStatusEnum.getColor(item.isPublished)"
         :desc="item.code"
         :title="item.name"
+        :disabled="item.isDisabled"
         @click="onAction(item)"
       >
         <ACardCell
@@ -31,6 +32,7 @@ import { BomEntity } from '@/model/mes/bom/BomEntity'
 import { BomService } from '@/model/mes/bom/BomService'
 import { BomTypeEnum } from '@/model/mes/bom/BomTypeEnum'
 import { BooleanYesNoDictionary } from '@/model/common/BooleanYesNoDictionary'
+import { PublishStatusEnum } from '@/model/common/PublishStatusEnum'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

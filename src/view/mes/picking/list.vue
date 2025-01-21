@@ -6,19 +6,31 @@
         :key="item.id"
         :desc="AirDateTime.formatFromMilliSecond(item.createTime)"
         :title="item.billCode"
+        :badge="MoveStatusEnum.getLabel(item.status)"
+        :badge-color="MoveStatusEnum.getColor(item.status)"
         @click="onAction(item)"
-      />
+      >
+        <ACardCell label="领料单元">
+          {{ item.structure.name }}
+        </ACardCell>
+        <ACardCell label="单元编码">
+          {{ item.structure.code }}
+        </ACardCell>
+      </ACard>
     </APage>
   </ABody>
 </template>
 
 <script lang="ts" setup>
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
-import { ABody, ACard, APage } from '@/airpower/components'
+import {
+  ABody, ACard, ACardCell, APage,
+} from '@/airpower/components'
 import { useBillTable } from '@/hook/billTable/useBillTable'
 import { PickingEntity } from '@/model/mes/picking/PickingEntity'
 import { PickingService } from '@/model/mes/picking/PickingService'
 import { AirDateTime } from '@/airpower/helper/AirDateTime'
+import { MoveStatusEnum } from '@/model/wms/move/MoveStatusEnum'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

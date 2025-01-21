@@ -1,9 +1,15 @@
 {
   "pages": [
     {
-      "path": "view/work",
+      "path": "view/home",
       "style": {
-        "navigationBarTitleText": "工作"
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "view/station",
+      "style": {
+        "navigationBarTitleText": "生产"
       }
     },
     {
@@ -130,12 +136,18 @@
       {
         "iconPath": "static/img/tabbar/tabbar-home.png",
         "selectedIconPath": "static/img/tabbar/tabbar-home-active.png",
-        "pagePath": "view/work",
-        "text": "工作"
+        "pagePath": "view/home",
+        "text": "首页"
       },
       {
         "iconPath": "static/img/tabbar/tabbar-more.png",
         "selectedIconPath": "static/img/tabbar/tabbar-more-active.png",
+        "pagePath": "view/station",
+        "text": "生产"
+      },
+      {
+        "iconPath": "static/img/tabbar/tabbar-message.png",
+        "selectedIconPath": "static/img/tabbar/tabbar-message-active.png",
         "pagePath": "view/message",
         "text": "消息"
       },

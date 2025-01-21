@@ -65,7 +65,7 @@ async function onLogin() {
   const accessToken = await UserService.create('登录中').login(user.value)
   AirConfig.saveAccessToken(accessToken)
   uni.reLaunch({
-    url: '/view/work',
+    url: '/view/home',
   })
 }
 </script>
