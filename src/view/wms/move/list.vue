@@ -1,0 +1,49 @@
+<template>
+  <ABody>
+    <APage :response="response">
+      <ACard
+        v-for="item in list"
+        :key="item.id"
+        :badge="OutputTypeEnum.getLabel(item.status)"
+        :badge-color="OutputTypeEnum.getColor(item.status)"
+        :desc="AirDateTime.formatFromMilliSecond(item.createTime)"
+        :disabled="item.isDisabled"
+        :title="item.billCode"
+        @click="onAction(item)"
+      >
+        <ACardCell
+          label="目标仓库"
+        >
+          {{ item.storage.name }}
+        </ACardCell>
+        <ACardCell
+          label="仓库编码"
+        >
+          {{ item.storage.code }}
+        </ACardCell>
+      </ACard>
+    </APage>
+  </ABody>
+</template>
+
+<script lang="ts" setup>
+import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
+import {
+  ABody, ACard, ACardCell, APage,
+} from '@/airpower/components'
+import { useBillTable } from '@/hook/billTable/useBillTable'
+import { OutputTypeEnum } from '@/model/wms/output/OutputTypeEnum'
+import { MoveService } from '@/model/wms/move/MoveService'
+import { MoveEntity } from '@/model/wms/move/MoveEntity'
+import { AirDateTime } from '@/airpower/helper/AirDateTime'
+
+const {
+  response, list, onReloadData, onLoadMore, onAction,
+} = useBillTable(MoveEntity, MoveService, {})
+
+onPullDownRefresh(() => onReloadData())
+onReachBottom(() => onLoadMore())
+
+</script>
+
+<style></style>
