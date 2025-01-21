@@ -9,7 +9,7 @@ import { AirApi } from '@/airpower/config/AirApi.ts'
 const system = uni.getSystemInfoSync()
 
 if (system.uniPlatform !== 'web') {
-  const rootUrl = 'http://10.0.0.6:8080/'
+  const rootUrl = 'http://10.0.0.4:8080/'
 
   AirConfig.apiUrl = `${rootUrl}`
   AirConfig.staticUrl = `${rootUrl}upload/`
