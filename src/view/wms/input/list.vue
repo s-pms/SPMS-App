@@ -36,7 +36,9 @@ import { AirDateTime } from '@/airpower/helper/AirDateTime'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,
-} = useBillTable(InputEntity, InputService, {})
+} = useBillTable(InputEntity, InputService, {
+  detailUrl: '/view/wms/input/detail',
+})
 
 onPullDownRefresh(() => onReloadData())
 onReachBottom(() => onLoadMore())

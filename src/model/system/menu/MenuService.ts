@@ -1,5 +1,5 @@
-import {AbstractBaseService} from '@/base/AbstractBaseService'
-import {MenuEntity} from './MenuEntity'
+import { AbstractBaseService } from '@/base/AbstractBaseService'
+import { MenuEntity } from './MenuEntity'
 
 /**
  * # 菜单接口服务

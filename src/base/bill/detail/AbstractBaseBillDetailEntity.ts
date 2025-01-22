@@ -1,4 +1,4 @@
-import {BaseEntity} from '@/base/BaseEntity'
+import { BaseEntity } from '@/base/BaseEntity'
 
 /**
  * # 单据明细抽象基类
@@ -20,4 +20,6 @@ export abstract class AbstractBaseBillDetailEntity extends BaseEntity {
    * ### 已完成数量
    */
   abstract finishQuantity: number
+
+  isFinished!: boolean
 }

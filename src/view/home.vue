@@ -1,6 +1,9 @@
 <template>
   <ABody tabbar>
-    <view class="banner">
+    <view
+      v-if="false"
+      class="banner"
+    >
       <image src="/static/img/logo.svg" />
     </view>
     <template

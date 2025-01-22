@@ -1,12 +1,12 @@
-import {Field, Model} from '@/airpower/decorator'
-import {AbstractBaseBillEntity} from '@/base/bill/AbstractBaseBillEntity'
-import {SaleEntity} from '@/model/channel/sale/SaleEntity'
-import {OutputDetailEntity} from './OutputDetailEntity'
-import {OutputTypeEnum} from './OutputTypeEnum'
-import {OutputStatusEnum} from './OutputStatusEnum'
-import {MoveEntity} from '../move/MoveEntity'
-import {AirEnum} from '@/airpower/base/AirEnum'
-import {PickingEntity} from '@/model/mes/picking/PickingEntity'
+import { Field, Model } from '@/airpower/decorator'
+import { AbstractBaseBillEntity } from '@/base/bill/AbstractBaseBillEntity'
+import { SaleEntity } from '@/model/channel/sale/SaleEntity'
+import { OutputDetailEntity } from './OutputDetailEntity'
+import { OutputTypeEnum } from './OutputTypeEnum'
+import { OutputStatusEnum } from './OutputStatusEnum'
+import { MoveEntity } from '../move/MoveEntity'
+import { AirEnum } from '@/airpower/base/AirEnum'
+import { PickingEntity } from '@/model/mes/picking/PickingEntity'
 
 @Model({
   label: '出库单',
@@ -21,38 +21,38 @@ export class OutputEntity extends AbstractBaseBillEntity<OutputDetailEntity> {
     label: '出库类型',
     dictionary: OutputTypeEnum,
   })
-  type!: number
+    type!: number
 
   @Field({
     label: '出库状态',
     dictionary: OutputStatusEnum,
   })
-  status!: number
+    status!: number
 
   @Field({
     label: '出库明细',
     type: OutputDetailEntity,
     array: true,
   })
-  details: OutputDetailEntity[] = []
+    details: OutputDetailEntity[] = []
 
   @Field({
     label: '采购单',
     type: SaleEntity,
   })
-  sale!: SaleEntity
+    sale!: SaleEntity
 
   @Field({
     label: '移库单',
     type: MoveEntity,
   })
-  move!: MoveEntity
+    move!: MoveEntity
 
   @Field({
     label: '领料单',
     type: PickingEntity,
   })
-  picking!: PickingEntity
+    picking!: PickingEntity
 
   getAuditingStatus(): AirEnum {
     return OutputStatusEnum.AUDITING

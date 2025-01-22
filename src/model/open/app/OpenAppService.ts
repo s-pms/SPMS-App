@@ -1,5 +1,5 @@
-import {AbstractBaseService} from '@/base/AbstractBaseService'
-import {OpenAppEntity} from './OpenAppEntity'
+import { AbstractBaseService } from '@/base/AbstractBaseService'
+import { OpenAppEntity } from './OpenAppEntity'
 
 export class OpenAppService extends AbstractBaseService<OpenAppEntity> {
   entityClass = OpenAppEntity

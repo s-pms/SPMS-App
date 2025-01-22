@@ -1,7 +1,7 @@
-import {AbstractBaseService} from '@/base/AbstractBaseService'
-import {CodeRuleEntity} from './CodeRuleEntity'
-import {CodeRuleField} from './CodeRuleField'
-import {CodeRuleParam} from './CodeRuleParam'
+import { AbstractBaseService } from '@/base/AbstractBaseService'
+import { CodeRuleEntity } from './CodeRuleEntity'
+import { CodeRuleField } from './CodeRuleField'
+import { CodeRuleParam } from './CodeRuleParam'
 
 /**
  * # 编码规则服务

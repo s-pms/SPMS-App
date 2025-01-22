@@ -1,7 +1,7 @@
-import {Field, Model} from '@/airpower/decorator'
-import {BaseEntity} from '@/base/BaseEntity'
-import {OpenAppArithmeticEnum} from './OpenAppArithmeticEnum'
-import {BooleanYesNoDictionary} from '@/model/common/BooleanYesNoDictionary'
+import { Field, Model } from '@/airpower/decorator'
+import { BaseEntity } from '@/base/BaseEntity'
+import { OpenAppArithmeticEnum } from './OpenAppArithmeticEnum'
+import { BooleanYesNoDictionary } from '@/model/common/BooleanYesNoDictionary'
 
 @Model({
   label: '应用',
@@ -16,7 +16,7 @@ export class OpenAppEntity extends BaseEntity {
     type: Boolean,
     dictionary: BooleanYesNoDictionary,
   })
-  isInternal!: boolean
+    isInternal!: boolean
 
   @Field({
     label: 'AppKey',
@@ -47,5 +47,5 @@ export class OpenAppEntity extends BaseEntity {
     label: 'IP白名单',
     type: String,
   })
-  ipWhiteList!: string
+    ipWhiteList!: string
 }

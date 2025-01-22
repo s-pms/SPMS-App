@@ -1,6 +1,6 @@
-import {BaseEntity} from '@/base/BaseEntity'
-import {OpenAppEntity} from '../app/OpenAppEntity'
-import {Field} from '@/airpower/decorator'
+import { BaseEntity } from '@/base/BaseEntity'
+import { OpenAppEntity } from '../app/OpenAppEntity'
+import { Field } from '@/airpower/decorator'
 
 export class OpenLogEntity extends BaseEntity {
   @Field({
@@ -34,5 +34,5 @@ export class OpenLogEntity extends BaseEntity {
 
   @Field({
     label: '响应时间',
-  }) updateTime!: number
+  }) declare updateTime: number
 }

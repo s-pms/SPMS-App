@@ -1,4 +1,4 @@
-import {AirEnum} from '@/airpower/base/AirEnum'
+import { AirEnum } from '@/airpower/base/AirEnum'
 
 export class CollectionGranularityEnum extends AirEnum {
   static ONE_MINUTE = new CollectionGranularityEnum(60, '每分钟')

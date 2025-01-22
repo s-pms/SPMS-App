@@ -1,5 +1,5 @@
-import {Field, Model} from '@/airpower/decorator'
-import {BaseEntity} from '@/base/BaseEntity'
+import { Field, Model } from '@/airpower/decorator'
+import { BaseEntity } from '@/base/BaseEntity'
 
 /**
  * # 工序
@@ -13,11 +13,11 @@ export class OperationEntity extends BaseEntity {
     label: '工序名称',
     type: String,
   })
-  name!: string
+    name!: string
 
   @Field({
     label: '工序编码',
     type: String,
   })
-  code!: string
+    code!: string
 }

@@ -1,7 +1,7 @@
-import {Field, Model} from '@/airpower/decorator'
-import {MaterialEntity} from '@/model/asset/material/MaterialEntity'
-import {SupplierEntity} from '../supplier/SupplierEntity'
-import {AbstractBaseBillDetailEntity} from '@/base/bill/detail/AbstractBaseBillDetailEntity'
+import { Field, Model } from '@/airpower/decorator'
+import { MaterialEntity } from '@/model/asset/material/MaterialEntity'
+import { SupplierEntity } from '../supplier/SupplierEntity'
+import { AbstractBaseBillDetailEntity } from '@/base/bill/detail/AbstractBaseBillDetailEntity'
 
 @Model({
   label: '采购明细',
@@ -10,48 +10,48 @@ export class PurchaseDetailEntity extends AbstractBaseBillDetailEntity {
   @Field({
     type: MaterialEntity,
   })
-  material!: MaterialEntity
+    material!: MaterialEntity
 
   @Field({
     type: SupplierEntity,
   })
-  supplier!: SupplierEntity
+    supplier!: SupplierEntity
 
   @Field({
     label: '物料编码',
   })
-  materialCode!: string
+    materialCode!: string
 
   @Field({
     label: '物料名称',
   })
-  materialName!: string
+    materialName!: string
 
   @Field({
     label: '供应商名称',
   })
-  supplierName!: string
+    supplierName!: string
 
   @Field({
     label: '供应商编码',
   })
-  supplierCode!: string
+    supplierCode!: string
 
   @Field({
     label: '采购单价',
     type: Number,
   })
-  price!: number
+    price!: number
 
   @Field({
     label: '采购数量',
     type: Number,
   })
-  quantity!: number
+    quantity!: number
 
   @Field({
     label: '已采购数量',
     type: Number,
   })
-  finishQuantity!: number
+    finishQuantity!: number
 }

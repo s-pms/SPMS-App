@@ -77,6 +77,12 @@
       }
     },
     {
+      "path": "view/wms/input/detail",
+      "style": {
+        "navigationBarTitleText": "入库详情"
+      }
+    },
+    {
       "path": "view/wms/output/list",
       "style": {
         "navigationBarTitleText": "出库管理"

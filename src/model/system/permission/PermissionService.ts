@@ -1,5 +1,5 @@
-import {AbstractBaseService} from '@/base/AbstractBaseService'
-import {PermissionEntity} from './PermissionEntity'
+import { AbstractBaseService } from '@/base/AbstractBaseService'
+import { PermissionEntity } from './PermissionEntity'
 
 /**
  * # 权限接口服务

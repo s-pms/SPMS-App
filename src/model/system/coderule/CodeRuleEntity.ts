@@ -1,6 +1,6 @@
-import {BaseEntity} from '@/base/BaseEntity'
-import {Field, Model} from '@/airpower/decorator'
-import {SerialNumberUpdateEnum} from '@/model/system/coderule/SerialNumberUpdateEnum'
+import { BaseEntity } from '@/base/BaseEntity'
+import { Field, Model } from '@/airpower/decorator'
+import { SerialNumberUpdateEnum } from '@/model/system/coderule/SerialNumberUpdateEnum'
 
 /**
  * # 编码规则实体
@@ -15,36 +15,36 @@ export class CodeRuleEntity extends BaseEntity {
   @Field({
     label: '编码所属字段',
   })
-  ruleField!: number
+    ruleField!: number
 
   @Field({
     label: '规则前缀',
   })
-  prefix!: string
+    prefix!: string
 
   @Field({
     label: '序列号初始长度',
   })
-  snLength!: number
+    snLength!: number
 
   @Field({
     label: '规则模板',
   })
-  template!: string
+    template!: string
 
   @Field({
     label: '序列号更新',
     dictionary: SerialNumberUpdateEnum,
   })
-  snType!: number
+    snType!: number
 
   @Field({
     label: '下一个编码',
   })
-  nextCode!: string
+    nextCode!: string
 
   @Field({
     type: Number,
   })
-  currentSn!: number
+    currentSn!: number
 }

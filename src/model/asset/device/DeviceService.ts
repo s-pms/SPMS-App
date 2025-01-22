@@ -1,6 +1,6 @@
-import {AbstractBaseService} from '@/base/AbstractBaseService'
-import {DeviceEntity} from './DeviceEntity'
-import {CollectionEntity} from '@/model/iot/collection/CollectionEntity'
+import { AbstractBaseService } from '@/base/AbstractBaseService'
+import { DeviceEntity } from './DeviceEntity'
+import { CollectionEntity } from '@/model/iot/collection/CollectionEntity'
 
 export class DeviceService extends AbstractBaseService<DeviceEntity> {
   entityClass = DeviceEntity

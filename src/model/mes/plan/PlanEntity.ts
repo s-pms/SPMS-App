@@ -1,10 +1,10 @@
-import {AbstractBaseBillEntity} from '@/base/bill/AbstractBaseBillEntity'
-import {PlanDetailEntity} from './PlanDetailEntity'
-import {PlanStatusEnum} from './PlanStatusEnum'
-import {CustomerEntity} from '@/model/channel/customer/CustomerEntity'
-import {PlanTypeEnum} from './PlanTypeEnum'
-import {Field, Model} from '@/airpower/decorator'
-import {AirEnum} from '@/airpower/base/AirEnum'
+import { AbstractBaseBillEntity } from '@/base/bill/AbstractBaseBillEntity'
+import { PlanDetailEntity } from './PlanDetailEntity'
+import { PlanStatusEnum } from './PlanStatusEnum'
+import { CustomerEntity } from '@/model/channel/customer/CustomerEntity'
+import { PlanTypeEnum } from './PlanTypeEnum'
+import { Field, Model } from '@/airpower/decorator'
+import { AirEnum } from '@/airpower/base/AirEnum'
 
 @Model({
   label: '生产计划',
@@ -19,41 +19,41 @@ export class PlanEntity extends AbstractBaseBillEntity<PlanDetailEntity> {
     label: '计划状态',
     dictionary: PlanStatusEnum,
   })
-  status!: number
+    status!: number
 
   @Field({
     label: '计划类型',
     dictionary: PlanTypeEnum,
   })
-  type!: number
+    type!: number
 
   @Field({
     label: '开始时间',
   })
-  startTime!: number
+    startTime!: number
 
   @Field({
     label: '交付时间',
   })
-  deliverTime!: number
+    deliverTime!: number
 
   @Field({
     label: '完成时间',
   })
-  finishTime!: number
+    finishTime!: number
 
   @Field({
     label: '计划明细',
     type: PlanDetailEntity,
     array: true,
   })
-  details: PlanDetailEntity[] = []
+    details: PlanDetailEntity[] = []
 
   @Field({
     label: '客户信息',
     type: CustomerEntity,
   })
-  customer!: CustomerEntity
+    customer!: CustomerEntity
 
   getAuditingStatus(): AirEnum {
     return PlanStatusEnum.AUDITING

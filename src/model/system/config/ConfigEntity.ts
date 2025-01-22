@@ -1,7 +1,7 @@
-import {BaseEntity} from '@/base/BaseEntity'
-import {Field, Model} from '@/airpower/decorator'
-import {ConfigType} from '@/model/system/config/ConfigType'
-import {BooleanYesNoDictionary} from '@/model/common/BooleanYesNoDictionary'
+import { BaseEntity } from '@/base/BaseEntity'
+import { Field, Model } from '@/airpower/decorator'
+import { ConfigType } from '@/model/system/config/ConfigType'
+import { BooleanYesNoDictionary } from '@/model/common/BooleanYesNoDictionary'
 
 /**
  * # 参数配置实体
@@ -15,28 +15,28 @@ export class ConfigEntity extends BaseEntity {
   @Field({
     label: '配置名称',
   })
-  name!: string
+    name!: string
 
   @Field({
     label: '配置标识',
   })
-  flag!: string
+    flag!: string
 
   @Field({
     label: '配置类型',
     dictionary: ConfigType,
   })
-  type!: number
+    type!: number
 
   @Field({
     label: '系统配置',
     type: Boolean,
     dictionary: BooleanYesNoDictionary,
   })
-  isSystem!: boolean
+    isSystem!: boolean
 
   @Field({
     label: '配置参数',
   })
-  config!: string
+    config!: string
 }
