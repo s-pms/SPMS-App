@@ -30,7 +30,7 @@
       "style": {
         "navigationBarTitleText": "",
         "navigationStyle": "custom",
-        "navigationBarTextStyle": "dark",
+        "navigationBarTextStyle": "black",
         "enablePullDownRefresh": false
       }
     },
@@ -128,6 +128,21 @@
       "path": "view/mes/routing/list",
       "style": {
         "navigationBarTitleText": "生产工艺"
+      }
+    },
+    {
+      "path": "component/GetNumber",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": false,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "background": "transparent",
+        "app-plus": {
+          "background": "transparent",
+          "backgroundColor": "rgba(0,0,0,0)",
+          "popGesture": "none"
+        }
       }
     }
   ],
