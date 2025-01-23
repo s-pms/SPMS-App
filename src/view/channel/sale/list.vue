@@ -6,16 +6,21 @@
         :key="item.id"
         :badge="SaleStatusEnum.getLabel(item.status)"
         :badge-color="SaleStatusEnum.getColor(item.status)"
-        :desc="item.reason"
         :title="item.billCode"
         :disabled="item.isDisabled"
         @click="onAction(item)"
       >
-        <ACardCell label="总金额">
+        <ACardCell label="客户编码">
+          {{ item.customer.code }}
+        </ACardCell>
+        <ACardCell label="客户名称">
+          {{ item.customer.name }}
+        </ACardCell>
+        <ACardCell label="销售总金额">
           ¥{{ item.totalPrice.toFixed(2) }}
         </ACardCell>
-        <ACardCell label="客户">
-          {{ item.customer.name }}
+        <ACardCell label="销售说明">
+          {{ item.reason }}
         </ACardCell>
       </ACard>
     </APage>

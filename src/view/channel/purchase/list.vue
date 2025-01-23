@@ -6,7 +6,6 @@
         :key="item.id"
         :badge="PurchaseStatusEnum.getLabel(item.status)"
         :badge-color="PurchaseStatusEnum.getColor(item.status)"
-        :desc="item.reason"
         :title="item.billCode"
         :disabled="item.isDisabled"
         @click="onAction(item)"
@@ -16,6 +15,9 @@
         </ACardCell>
         <ACardCell label="实际金额">
           ¥{{ item.totalRealPrice.toFixed(2) }}
+        </ACardCell>
+        <ACardCell label="采购事由">
+          {{ item.reason }}
         </ACardCell>
       </ACard>
     </APage>
@@ -35,6 +37,7 @@ import { PurchaseStatusEnum } from '@/model/channel/purchase/PurchaseStatusEnum'
 const {
   response, list, onReloadData, onLoadMore, onAction,
 } = useBillTable(PurchaseEntity, PurchaseService, {
+  detailUrl: '/view/channel/purchase/detail',
 })
 
 onPullDownRefresh(() => onReloadData())
