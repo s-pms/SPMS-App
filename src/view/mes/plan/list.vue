@@ -4,16 +4,16 @@
       <ACard
         v-for="item in list"
         :key="item.id"
-        :desc="AirDateTime.formatFromMilliSecond(item.createTime)"
-        :title="item.billCode"
         :badge="PlanStatusEnum.getLabel(item.status)"
         :badge-color="PlanStatusEnum.getColor(item.status)"
+        :desc="AirDateTime.formatFromMilliSecond(item.createTime)"
         :disabled="item.isDisabled"
+        :title="item.billCode"
         @click="onAction(item)"
       >
         <ACardCell
-          label="计划类型"
           :color="PlanTypeEnum.getColor(item.type)"
+          label="计划类型"
         >
           {{ PlanTypeEnum.getLabel(item.type) }}
         </ACardCell>
@@ -24,7 +24,8 @@
           {{ AirDateTime.formatFromMilliSecond(item.startTime, AirDateTimeFormatter.YYYY_MM_DD) }}
         </ACardCell>
         <ACardCell label="完成时间">
-          {{ item.finishTime ? AirDateTime.formatFromMilliSecond(item.finishTime, AirDateTimeFormatter.YYYY_MM_DD) : '-'
+          {{
+            item.finishTime ? AirDateTime.formatFromMilliSecond(item.finishTime, AirDateTimeFormatter.YYYY_MM_DD) : '-'
           }}
         </ACardCell>
         <template v-if="item.customer">
@@ -39,6 +40,7 @@
             {{ item.customer.name }}
           </ACardCell>
         </template>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -56,6 +58,7 @@ import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { PlanStatusEnum } from '@/model/mes/plan/PlanStatusEnum'
 import { PlanTypeEnum } from '@/model/mes/plan/PlanTypeEnum'
 import { AirDateTimeFormatter } from '@/airpower/enum/AirDateTimeFormatter'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

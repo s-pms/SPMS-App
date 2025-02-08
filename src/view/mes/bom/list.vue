@@ -7,8 +7,8 @@
         :badge="PublishStatusEnum.getLabel(item.isPublished)"
         :badge-color="PublishStatusEnum.getColor(item.isPublished)"
         :desc="item.code"
-        :title="item.name"
         :disabled="item.isDisabled"
+        :title="item.name"
         @click="onAction(item)"
       >
         <ACardCell
@@ -17,6 +17,7 @@
         >
           {{ BomTypeEnum.getLabel(item.type) }}
         </ACardCell>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -31,8 +32,8 @@ import { useTable } from '@/hook/useTable'
 import { BomEntity } from '@/model/mes/bom/BomEntity'
 import { BomService } from '@/model/mes/bom/BomService'
 import { BomTypeEnum } from '@/model/mes/bom/BomTypeEnum'
-import { BooleanYesNoDictionary } from '@/model/common/BooleanYesNoDictionary'
 import { PublishStatusEnum } from '@/model/common/PublishStatusEnum'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

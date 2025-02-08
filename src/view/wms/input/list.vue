@@ -6,7 +6,6 @@
         :key="item.id"
         :badge="InputStatusEnum.getLabel(item.status)"
         :badge-color="InputStatusEnum.getColor(item.status)"
-        :desc="AirDateTime.formatFromMilliSecond(item.createTime)"
         :disabled="item.isDisabled"
         :title="item.billCode"
         @click="onAction(item)"
@@ -17,6 +16,7 @@
         >
           {{ InputTypeEnum.getLabel(item.type) }}
         </ACardCell>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -32,7 +32,7 @@ import { InputEntity } from '@/model/wms/input/InputEntity'
 import { InputService } from '@/model/wms/input/InputService'
 import { InputTypeEnum } from '@/model/wms/input/InputTypeEnum'
 import { InputStatusEnum } from '@/model/wms/input/InputStatusEnum'
-import { AirDateTime } from '@/airpower/helper/AirDateTime'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

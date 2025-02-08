@@ -21,6 +21,7 @@
         >
           {{ item.storage.code }}
         </ACardCell>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -36,6 +37,7 @@ import { MoveService } from '@/model/wms/move/MoveService'
 import { MoveEntity } from '@/model/wms/move/MoveEntity'
 import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { MoveStatusEnum } from '@/model/wms/move/MoveStatusEnum'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

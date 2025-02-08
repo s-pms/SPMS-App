@@ -13,6 +13,7 @@
       >
         {{ InputTypeEnum.getLabel(formData.type) }}
       </ACardCell>
+      <TimeCell :data="formData" />
     </ACard>
     <ACard title="入库明细">
       <view
@@ -154,6 +155,7 @@ import { PurchaseStatusEnum } from '@/model/channel/purchase/PurchaseStatusEnum'
 import { AirColor } from '@/airpower/enum/AirColor'
 import { OrderTypeEnum } from '@/model/mes/order/OrderTypeEnum'
 import { OrderStatusEnum } from '@/model/mes/order/OrderStatusEnum'
+import { TimeCell } from '@/component'
 
 const { getDetail, setId, formData } = useAirDetail(InputEntity, InputService, {})
 

@@ -7,8 +7,8 @@
         :badge="MaterialTypeEnum.getLabel(item.materialType)"
         :badge-color="MaterialTypeEnum.getColor(item.materialType)"
         :desc="item.code"
-        :title="item.name"
         :disabled="item.isDisabled"
+        :title="item.name"
         @click="onAction(item)"
       >
         <ACardCell label="计量单位">
@@ -17,6 +17,7 @@
         <ACardCell label="规格型号">
           {{ item.spc || '-' }}
         </ACardCell>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -31,6 +32,7 @@ import { MaterialEntity } from '@/model/asset/material/MaterialEntity'
 import { MaterialService } from '@/model/asset/material/MaterialService'
 import { MaterialTypeEnum } from '@/model/asset/material/MaterialTypeEnum'
 import { useTable } from '@/hook/useTable'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

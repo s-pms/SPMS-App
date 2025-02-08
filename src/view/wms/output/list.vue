@@ -17,6 +17,7 @@
         >
           {{ OutputTypeEnum.getLabel(item.type) }}
         </ACardCell>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -32,6 +33,7 @@ import { OutputTypeEnum } from '@/model/wms/output/OutputTypeEnum'
 import { OutputEntity } from '@/model/wms/output/OutputEntity'
 import { OutputService } from '@/model/wms/output/OutputService'
 import { AirDateTime } from '@/airpower/helper/AirDateTime'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

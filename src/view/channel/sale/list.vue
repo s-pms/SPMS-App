@@ -6,8 +6,9 @@
         :key="item.id"
         :badge="SaleStatusEnum.getLabel(item.status)"
         :badge-color="SaleStatusEnum.getColor(item.status)"
-        :title="item.billCode"
+        :desc="item.reason"
         :disabled="item.isDisabled"
+        :title="item.billCode"
         @click="onAction(item)"
       >
         <ACardCell label="客户编码">
@@ -22,6 +23,7 @@
         <ACardCell label="销售说明">
           {{ item.reason }}
         </ACardCell>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -36,6 +38,7 @@ import { SaleEntity } from '@/model/channel/sale/SaleEntity'
 import { SaleService } from '@/model/channel/sale/SaleService'
 import { SaleStatusEnum } from '@/model/channel/sale/SaleStatusEnum'
 import { useBillTable } from '@/hook/billTable/useBillTable'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

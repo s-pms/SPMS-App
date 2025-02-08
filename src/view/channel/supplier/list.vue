@@ -11,6 +11,7 @@
         <ACardCell label="联系电话">
           {{ item.phone }}
         </ACardCell>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -24,6 +25,7 @@ import {
 import { SupplierEntity } from '@/model/channel/supplier/SupplierEntity'
 import { SupplierService } from '@/model/channel/supplier/SupplierService'
 import { useTable } from '@/hook/useTable'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

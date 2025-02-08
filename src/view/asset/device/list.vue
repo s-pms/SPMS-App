@@ -7,8 +7,8 @@
         :badge="DeviceStatusEnum.getLabel(item.status)"
         :badge-color="DeviceStatusEnum.getColor(item.status)"
         :desc="item.code"
-        :title="item.name"
         :disabled="item.isDisabled"
+        :title="item.name"
         @click="onAction(item)"
       >
         <ACardCell label="UUID">
@@ -26,6 +26,7 @@
         >
           {{ AlarmStatusEnum.getLabel(item.alarm) }}
         </ACardCell>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -42,6 +43,7 @@ import { DeviceStatusEnum } from '@/model/asset/device/DeviceStatusEnum'
 import { BooleanYesNoDictionary } from '@/model/common/BooleanYesNoDictionary'
 import { AlarmStatusEnum } from '@/model/asset/device/AlarmStatusEnum'
 import { useTable } from '@/hook/useTable'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,

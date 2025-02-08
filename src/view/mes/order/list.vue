@@ -4,36 +4,36 @@
       <ACard
         v-for="item in list"
         :key="item.id"
-        :desc="AirDateTime.formatFromMilliSecond(item.createTime)"
-        :title="item.billCode"
-        :disabled="item.isDisabled"
         :badge="OrderStatusEnum.getLabel(item.status)"
         :badge-color="OrderStatusEnum.getColor(item.status)"
+        :desc="AirDateTime.formatFromMilliSecond(item.createTime)"
+        :disabled="item.isDisabled"
+        :title="item.billCode"
         @click="onAction(item)"
       >
         <template #numbers>
           <ACardNumber
-            label="订单数量"
             :color="AirColor.NORMAL"
+            label="订单数量"
           >
             {{ item.quantity }}
           </ACardNumber>
           <ACardNumber
-            label="完成数量"
             :color="AirColor.SUCCESS"
+            label="完成数量"
           >
             {{ item.finishQuantity }}
           </ACardNumber>
           <ACardNumber
-            label="异常数量"
             :color="AirColor.WARNING"
+            label="异常数量"
           >
             {{ item.ngQuantity }}
           </ACardNumber>
         </template>
         <ACardCell
-          label="订单类型"
           :color="OrderTypeEnum.getColor(item.type)"
+          label="订单类型"
         >
           {{ OrderTypeEnum.getLabel(item.type) }}
         </ACardCell>
@@ -43,6 +43,7 @@
         <ACardCell label="物料名称">
           {{ item.material.name }}
         </ACardCell>
+        <TimeCell :data="item" />
       </ACard>
     </APage>
   </ABody>
@@ -60,6 +61,7 @@ import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { OrderStatusEnum } from '@/model/mes/order/OrderStatusEnum'
 import { OrderTypeEnum } from '@/model/mes/order/OrderTypeEnum'
 import { AirColor } from '@/airpower/enum/AirColor'
+import { TimeCell } from '@/component'
 
 const {
   response, list, onReloadData, onLoadMore, onAction,
