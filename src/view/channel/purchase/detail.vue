@@ -25,7 +25,8 @@
           :desc="detail.material.name"
           :disabled="detail.isFinished"
           :title="detail.material.code"
-          disable-label="已完成"
+          disable-label="采购完成"
+          @click="onDetailClicked(detail)"
         >
           <template #numbers>
             <ACardNumber
@@ -56,21 +57,35 @@ import { onLoad, onPullDownRefresh } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, ACardNumber,
 } from '@/airpower/components'
-import { useAirDetail } from '@/airpower/hook/useAirDetail'
 import { PurchaseStatusEnum } from '@/model/channel/purchase/PurchaseStatusEnum'
 import { AirColor } from '@/airpower/enum/AirColor'
 import { PurchaseEntity } from '@/model/channel/purchase/PurchaseEntity'
 import { PurchaseService } from '@/model/channel/purchase/PurchaseService'
 import { TimeCell } from '@/component'
+import { PurchaseDetailEntity } from '@/model/channel/purchase/PurchaseDetailEntity'
+import { AppForm } from '@/config/AppForm'
+import { useBillDetail } from '@/hook/bill/detail/useBillDetail'
 
-const { getDetail, setId, formData } = useAirDetail(PurchaseEntity, PurchaseService, {})
-
-onLoad((query) => {
-  setId(query?.id)
+const props = defineProps({
+  id: {
+    type: Number,
+    required: true,
+  },
+})
+const { getDetail, formData, addDetailFinishQuantity } = useBillDetail(PurchaseEntity, PurchaseService, {
+  id: props.id,
 })
 
 onPullDownRefresh(() => getDetail())
+onLoad(() => getDetail())
 
+async function onDetailClicked(detail: PurchaseDetailEntity) {
+  if (detail.isFinished) {
+    return
+  }
+  const number = await AppForm.getNumber(detail.material.name, '请输入本次采购数量...')
+  addDetailFinishQuantity(detail, number)
+}
 </script>
 
 <style></style>

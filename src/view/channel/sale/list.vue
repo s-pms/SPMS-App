@@ -37,7 +37,7 @@ import {
 import { SaleEntity } from '@/model/channel/sale/SaleEntity'
 import { SaleService } from '@/model/channel/sale/SaleService'
 import { SaleStatusEnum } from '@/model/channel/sale/SaleStatusEnum'
-import { useBillTable } from '@/hook/billTable/useBillTable'
+import { useBillTable } from '@/hook/bill/useBillTable'
 import { TimeCell } from '@/component'
 
 const {

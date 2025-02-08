@@ -35,6 +35,21 @@
       }
     },
     {
+      "path": "component/form/NumberInput",
+      "style": {
+        "enablePullDownRefresh": false,
+        "navigationStyle": "custom",
+        "backgroundColor": "transparent",
+        "backgroundColorTop": "transparent",
+        "backgroundColorBottom": "transparent",
+        "app-plus": {
+          "background": "transparent",
+          "backgroundColor": "rgba(0,0,0,0)",
+          "popGesture": "none"
+        }
+      }
+    },
+    {
       "path": "view/asset/material/list",
       "style": {
         "navigationBarTitleText": "物料列表"
@@ -68,6 +83,12 @@
       "path": "view/channel/purchase/detail",
       "style": {
         "navigationBarTitleText": "采购详情"
+      }
+    },
+    {
+      "path": "view/channel/purchase/test",
+      "style": {
+        "navigationBarTitleText": "测试"
       }
     },
     {

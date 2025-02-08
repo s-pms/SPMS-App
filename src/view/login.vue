@@ -1,7 +1,7 @@
 <template>
   <ABody>
     <view class="login">
-      <view class="form">
+      <view class="frame">
         <view class="title">
           请先登录SPMS
         </view>
@@ -9,7 +9,7 @@
           <input
             v-model="user.email"
             confirm-type="next"
-            focus
+            focus="focus"
             placeholder="你的邮箱/手机/ID..."
             type="email"
           >
@@ -78,7 +78,7 @@ async function onLogin() {
   position: absolute;
   inset: 0;
 
-  .form {
+  .frame {
     padding: 0 100rpx;
     margin-top: -200rpx;
 

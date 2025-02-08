@@ -156,14 +156,15 @@ import { AirColor } from '@/airpower/enum/AirColor'
 import { OrderTypeEnum } from '@/model/mes/order/OrderTypeEnum'
 import { OrderStatusEnum } from '@/model/mes/order/OrderStatusEnum'
 import { TimeCell } from '@/component'
+import { airPropsId } from '@/airpower/config/AirProps'
 
-const { getDetail, setId, formData } = useAirDetail(InputEntity, InputService, {})
-
-onLoad((query) => {
-  setId(query?.id)
+const props = defineProps(airPropsId())
+const { getDetail, formData } = useAirDetail(InputEntity, InputService, {
+  id: props.param,
 })
 
 onPullDownRefresh(() => getDetail())
+onLoad(() => getDetail())
 
 </script>
 

@@ -47,7 +47,7 @@ async function init() {
   moduleList.value = await UserService.create().getMyMenuList()
 }
 
-onLoad(() => {
+onLoad(async () => {
   init()
 })
 

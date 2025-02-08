@@ -53,7 +53,7 @@ import {
 } from '@/airpower/components'
 import { PlanEntity } from '@/model/mes/plan/PlanEntity'
 import { PlanService } from '@/model/mes/plan/PlanService'
-import { useBillTable } from '@/hook/billTable/useBillTable'
+import { useBillTable } from '@/hook/bill/useBillTable'
 import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { PlanStatusEnum } from '@/model/mes/plan/PlanStatusEnum'
 import { PlanTypeEnum } from '@/model/mes/plan/PlanTypeEnum'

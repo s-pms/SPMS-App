@@ -9,14 +9,22 @@ uni-button {
   box-sizing: border-box !important;
   background-color: var(--primary-color) !important;
   color: white !important;
+  transition: all .3s;
 }
+
 uni-button:after {
   border: none !important;
 }
+
 uni-button[type="button"] {
   background-color: var(--primary-color-bg) !important;
   color: var(--primary-color) !important;
 }
+
 uni-button[type="reset"] {
   background-color: var(--danger-color) !important;
+}
+
+uni-button[disabled] {
+  opacity: 0.6;
 }

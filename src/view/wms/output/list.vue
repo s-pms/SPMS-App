@@ -28,7 +28,7 @@ import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
-import { useBillTable } from '@/hook/billTable/useBillTable'
+import { useBillTable } from '@/hook/bill/useBillTable'
 import { OutputTypeEnum } from '@/model/wms/output/OutputTypeEnum'
 import { OutputEntity } from '@/model/wms/output/OutputEntity'
 import { OutputService } from '@/model/wms/output/OutputService'

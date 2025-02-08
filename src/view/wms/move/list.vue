@@ -32,7 +32,7 @@ import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
 } from '@/airpower/components'
-import { useBillTable } from '@/hook/billTable/useBillTable'
+import { useBillTable } from '@/hook/bill/useBillTable'
 import { MoveService } from '@/model/wms/move/MoveService'
 import { MoveEntity } from '@/model/wms/move/MoveEntity'
 import { AirDateTime } from '@/airpower/helper/AirDateTime'

@@ -54,7 +54,7 @@ import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, ACardNumber, APage,
 } from '@/airpower/components'
-import { useBillTable } from '@/hook/billTable/useBillTable'
+import { useBillTable } from '@/hook/bill/useBillTable'
 import { OrderEntity } from '@/model/mes/order/OrderEntity'
 import { OrderService } from '@/model/mes/order/OrderService'
 import { AirDateTime } from '@/airpower/helper/AirDateTime'
