@@ -9,7 +9,9 @@
         :desc="item.reason"
         :disabled="item.isDisabled"
         :title="item.billCode"
+        link-tip="查看详情"
         @click="onAction(item)"
+        @link="onDetail(item.id)"
       >
         <ACardCell label="总金额">
           ¥{{ item.totalPrice.toFixed(2) }}
@@ -35,7 +37,7 @@ import { PurchaseStatusEnum } from '@/model/channel/purchase/PurchaseStatusEnum'
 import { TimeCell } from '@/component'
 
 const {
-  response, list, onReloadData, onLoadMore, onAction,
+  response, list, onReloadData, onLoadMore, onAction, onDetail,
 } = useBillTable(PurchaseEntity, PurchaseService, {
   detailUrl: '/view/channel/purchase/detail',
 })

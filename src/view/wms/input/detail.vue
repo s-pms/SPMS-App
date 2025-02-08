@@ -22,8 +22,10 @@
         class="input-detail"
       >
         <ACard
+          :desc="detail.material.code"
           :disabled="detail.isFinished"
-          disable-label="已完成"
+          :title="detail.material.name"
+          disable-label="入库完成"
         >
           <template #numbers>
             <ACardNumber
@@ -38,11 +40,11 @@
               {{ detail.finishQuantity }}
             </ACardNumber>
           </template>
-          <ACardCell label="物料编码">
-            {{ detail.material.code }}
+          <ACardCell label="计量单位">
+            {{ detail.material.unit.name }}
           </ACardCell>
-          <ACardCell label="物料名称">
-            {{ detail.material.name }}
+          <ACardCell label="规格型号">
+            {{ detail.material.spc || '-' }}
           </ACardCell>
         </ACard>
       </view>
@@ -51,6 +53,7 @@
       v-if="InputTypeEnum.PURCHASE.equalsKey(formData.type)"
       :disabled="formData.isDisabled"
       title="采购单信息"
+      @click="AirRouter.go('/view/channel/purchase/detail?param='+formData.purchase.id)"
     >
       <ACardCell label="采购单号">
         {{ formData.purchase.billCode }}
@@ -123,12 +126,6 @@
       >
         {{ OrderTypeEnum.getLabel(formData.order.type) }}
       </ACardCell>
-      <ACardCell label="物料编码">
-        {{ formData.order.material.code }}
-      </ACardCell>
-      <ACardCell label="物料名称">
-        {{ formData.order.material.name }}
-      </ACardCell>
       <ACardCell
         :color="OrderStatusEnum.getColor(formData.order.status)"
         label="状态"
@@ -146,7 +143,6 @@ import {
 } from '@/airpower/components'
 import { InputEntity } from '@/model/wms/input/InputEntity'
 import { InputService } from '@/model/wms/input/InputService'
-import { useAirDetail } from '@/airpower/hook/useAirDetail'
 import { InputStatusEnum } from '@/model/wms/input/InputStatusEnum'
 import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { InputTypeEnum } from '@/model/wms/input/InputTypeEnum'
@@ -157,9 +153,11 @@ import { OrderTypeEnum } from '@/model/mes/order/OrderTypeEnum'
 import { OrderStatusEnum } from '@/model/mes/order/OrderStatusEnum'
 import { TimeCell } from '@/component'
 import { airPropsId } from '@/airpower/config/AirProps'
+import { useBillDetail } from '@/hook/bill/detail/useBillDetail.ts'
+import { AirRouter } from '@/airpower/helper/AirRouter.ts'
 
 const props = defineProps(airPropsId())
-const { getDetail, formData } = useAirDetail(InputEntity, InputService, {
+const { getDetail, formData } = useBillDetail(InputEntity, InputService, {
   id: props.param,
 })
 

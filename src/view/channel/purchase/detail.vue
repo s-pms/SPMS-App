@@ -65,15 +65,11 @@ import { TimeCell } from '@/component'
 import { PurchaseDetailEntity } from '@/model/channel/purchase/PurchaseDetailEntity'
 import { AppForm } from '@/config/AppForm'
 import { useBillDetail } from '@/hook/bill/detail/useBillDetail'
+import { airPropsId } from '@/airpower/config/AirProps.ts'
 
-const props = defineProps({
-  id: {
-    type: Number,
-    required: true,
-  },
-})
+const props = defineProps(airPropsId())
 const { getDetail, formData, addDetailFinishQuantity } = useBillDetail(PurchaseEntity, PurchaseService, {
-  id: props.id,
+  id: props.param,
 })
 
 onPullDownRefresh(() => getDetail())

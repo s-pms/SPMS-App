@@ -8,7 +8,9 @@
         :badge-color="InputStatusEnum.getColor(item.status)"
         :disabled="item.isDisabled"
         :title="item.billCode"
+        link-tip="查看详情"
         @click="onAction(item)"
+        @link="onDetail(item.id)"
       >
         <ACardCell
           :color="InputTypeEnum.getColor(item.type)"
@@ -35,7 +37,7 @@ import { InputStatusEnum } from '@/model/wms/input/InputStatusEnum'
 import { TimeCell } from '@/component'
 
 const {
-  response, list, onReloadData, onLoadMore, onAction,
+  response, list, onReloadData, onLoadMore, onAction, onDetail,
 } = useBillTable(InputEntity, InputService, {
   detailUrl: '/view/wms/input/detail',
 })
