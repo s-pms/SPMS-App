@@ -27,12 +27,12 @@
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
-} from '@/airpower/components'
+} from '@airpower/components'
+import { AirDateTime } from '@airpower/helper/AirDateTime'
 import { useBillTable } from '@/hook/bill/useBillTable'
 import { OutputTypeEnum } from '@/model/wms/output/OutputTypeEnum'
 import { OutputEntity } from '@/model/wms/output/OutputEntity'
 import { OutputService } from '@/model/wms/output/OutputService'
-import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { TimeCell } from '@/component'
 
 const {

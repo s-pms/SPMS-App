@@ -27,7 +27,7 @@
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
-} from '@/airpower/components'
+} from '@airpower/components'
 import { useTable } from '@/hook/useTable'
 import { BomEntity } from '@/model/mes/bom/BomEntity'
 import { BomService } from '@/model/mes/bom/BomService'

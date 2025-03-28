@@ -27,14 +27,14 @@
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
-} from '@/airpower/components'
+} from '@airpower/components'
+import { airProps } from '@airpower/config/AirProps'
+import { useAirSelector } from '@airpower/hook/useAirSelector'
+import { AirRouter } from '@airpower/helper/AirRouter'
 import { PurchaseEntity } from '@/model/channel/purchase/PurchaseEntity'
 import { PurchaseService } from '@/model/channel/purchase/PurchaseService'
-import { airProps } from '@/airpower/config/AirProps'
-import { useAirSelector } from '@/airpower/hook/useAirSelector'
 import { PurchaseStatusEnum } from '@/model/channel/purchase/PurchaseStatusEnum'
 import { TimeCell } from '@/component'
-import { AirRouter } from '@/airpower/helper/AirRouter'
 
 const props = defineProps(airProps())
 const {

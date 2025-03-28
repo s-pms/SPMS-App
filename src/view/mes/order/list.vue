@@ -53,14 +53,14 @@
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, ACardNumber, APage,
-} from '@/airpower/components'
+} from '@airpower/components'
+import { AirDateTime } from '@airpower/helper/AirDateTime'
+import { AirColor } from '@airpower/enum/AirColor'
 import { useBillTable } from '@/hook/bill/useBillTable'
 import { OrderEntity } from '@/model/mes/order/OrderEntity'
 import { OrderService } from '@/model/mes/order/OrderService'
-import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { OrderStatusEnum } from '@/model/mes/order/OrderStatusEnum'
 import { OrderTypeEnum } from '@/model/mes/order/OrderTypeEnum'
-import { AirColor } from '@/airpower/enum/AirColor'
 import { TimeCell } from '@/component'
 
 const {

@@ -31,11 +31,11 @@
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
-} from '@/airpower/components'
+} from '@airpower/components'
+import { AirDateTime } from '@airpower/helper/AirDateTime'
 import { useBillTable } from '@/hook/bill/useBillTable'
 import { MoveService } from '@/model/wms/move/MoveService'
 import { MoveEntity } from '@/model/wms/move/MoveEntity'
-import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { MoveStatusEnum } from '@/model/wms/move/MoveStatusEnum'
 import { TimeCell } from '@/component'
 

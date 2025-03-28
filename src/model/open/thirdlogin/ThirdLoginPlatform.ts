@@ -1,4 +1,4 @@
-import { AirEnum } from '@/airpower/base/AirEnum'
+import { AirEnum } from '@airpower/base/AirEnum'
 
 /**
  * # 第三方登录平台
@@ -28,28 +28,28 @@ export class ThirdLoginPlatform extends AirEnum {
   static readonly APPLE = new ThirdLoginPlatform(10, '苹果', 'apple', true)
 
   /**
-   * ### 标识
-   */
+     * ### 标识
+     */
   flag!: string
 
   /**
-   * ### 授权地址
-   */
+     * ### 授权地址
+     */
   oauthUrl!: string
 
   /**
-   * ### 应用标识
-   */
+     * ### 应用标识
+     */
   appKey!: string
 
   /**
-   * ### 宽度
-   */
+     * ### 宽度
+     */
   width = 800
 
   /**
-   * ### 高度
-   */
+     * ### 高度
+     */
   height = 750
 
   constructor(key: number, label: string, flag: string, disable = false) {

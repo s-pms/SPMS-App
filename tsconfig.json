@@ -11,6 +11,9 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
+      "@airpower/*": [
+        "airpower/*"
+      ],
       "@/*": [
         "src/*"
       ]
@@ -24,6 +27,10 @@
     ]
   },
   "include": [
+    "airpower/**/*.ts",
+    "airpower/**/*.d.ts",
+    "airpower/**/*.tsx",
+    "airpower/**/*.vue",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",

@@ -21,7 +21,7 @@
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
-} from '@/airpower/components'
+} from '@airpower/components'
 import { SupplierEntity } from '@/model/channel/supplier/SupplierEntity'
 import { SupplierService } from '@/model/channel/supplier/SupplierService'
 import { useTable } from '@/hook/useTable'

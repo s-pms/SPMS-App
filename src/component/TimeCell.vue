@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import { AirDateTime } from '@/airpower/helper/AirDateTime'
-import { ACardCell } from '@/airpower/components'
+import { AirDateTime } from '@airpower/helper/AirDateTime'
+import { ACardCell } from '@airpower/components'
 import { BaseEntity } from '@/base/BaseEntity'
 
 defineProps({

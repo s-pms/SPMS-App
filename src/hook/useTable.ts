@@ -1,9 +1,9 @@
 /* eslint-disable no-use-before-define */
-import { AirEnum } from '@/airpower/base/AirEnum'
-import { AirTableAction } from '@/airpower/enum/AirTableAction'
-import { AirConfirm } from '@/airpower/feedback/AirConfirm'
-import { useAirTable } from '@/airpower/hook/useAirTable'
-import { ClassConstructor } from '@/airpower/type/AirType'
+import { AirEnum } from '@airpower/base/AirEnum'
+import { AirTableAction } from '@airpower/enum/AirTableAction'
+import { AirConfirm } from '@airpower/feedback/AirConfirm'
+import { useAirTable } from '@airpower/hook/useAirTable'
+import { ClassConstructor } from '@airpower/type/AirType'
 import { AbstractBaseService } from '@/base/AbstractBaseService'
 import { BaseEntity } from '@/base/BaseEntity'
 import { TableAction } from '@/config/TableAction'
@@ -18,8 +18,8 @@ import { ITableOption } from './ITableOption'
  * @author Hamm.cn
  */
 export function useTable<
-  E extends BaseEntity,
-  S extends AbstractBaseService<E>,
+    E extends BaseEntity,
+    S extends AbstractBaseService<E>,
 >(
   entityClass: ClassConstructor<E>,
   serviceClass: ClassConstructor<S>,
@@ -73,9 +73,9 @@ export function useTable<
   const result = useAirTable(entityClass, serviceClass, option)
 
   /**
-   * ### 实体发布
-   * @param entity 实体
-   */
+     * ### 实体发布
+     * @param entity 实体
+     */
   async function onPublish(entity: E) {
     await AirConfirm.show('确认发布', '发布后将无法再次修改，是否确认？')
     await result.service.publish(entity)

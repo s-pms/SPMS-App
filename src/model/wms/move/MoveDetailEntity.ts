@@ -1,4 +1,4 @@
-import { Field, Model } from '@/airpower/decorator'
+import { Field, Model } from '@airpower/decorator'
 import { AbstractBaseBillDetailEntity } from '@/base/bill/detail/AbstractBaseBillDetailEntity'
 import { InventoryEntity } from '../inventory/InventoryEntity'
 
@@ -6,18 +6,18 @@ import { InventoryEntity } from '../inventory/InventoryEntity'
   label: '移库明细',
 })
 export class MoveDetailEntity extends AbstractBaseBillDetailEntity {
-  @Field({
-    type: InventoryEntity,
-  })
-    inventory!: InventoryEntity
+    @Field({
+      type: InventoryEntity,
+    })
+      inventory!: InventoryEntity
 
-  @Field({
-    label: '移动数量',
-  })
-    quantity!: number
+    @Field({
+      label: '移动数量',
+    })
+      quantity!: number
 
-  @Field({
-    label: '已移动数量',
-  })
-    finishQuantity!: number
+    @Field({
+      label: '已移动数量',
+    })
+      finishQuantity!: number
 }

@@ -1,9 +1,9 @@
-import '@/airpower/assets/css/airpower.scss'
+import '@airpower/assets/css/airpower.scss'
 
 import { createSSRApp } from 'vue'
+import { AirConfig } from '@airpower/config/AirConfig'
+import { AirApi } from '@airpower/config/AirApi'
 import App from './App.vue'
-import { AirConfig } from '@/airpower/config/AirConfig'
-import { AirApi } from '@/airpower/config/AirApi'
 import '@/static/css/main.scss'
 
 const system = uni.getSystemInfoSync()

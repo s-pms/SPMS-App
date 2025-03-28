@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { ADialog } from '@/airpower/components'
-import { AirRouter } from '@/airpower/helper/AirRouter'
-import { airProps } from '@/airpower/config/AirProps'
+import { ADialog } from '@airpower/components'
+import { AirRouter } from '@airpower/helper/AirRouter'
+import { airProps } from '@airpower/config/AirProps'
 
 const props = defineProps({
   ...airProps(),
@@ -32,10 +32,7 @@ const isDisabled = computed(() => {
   if (!num.value) {
     return true
   }
-  if (num.value > props.max || num.value < props.min) {
-    return true
-  }
-  return false
+  return num.value > props.max || num.value < props.min
 })
 </script>
 

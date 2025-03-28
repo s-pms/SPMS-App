@@ -138,23 +138,23 @@
 
 <script lang="ts" setup>
 import { onLoad, onPullDownRefresh } from '@dcloudio/uni-app'
+import { AirColor } from '@airpower/enum/AirColor'
+import { AirDateTime } from '@airpower/helper/AirDateTime'
+import { airPropsId } from '@airpower/config/AirProps'
+import { AirRouter } from '@airpower/helper/AirRouter'
 import {
   ABody, ACard, ACardCell, ACardNumber,
-} from '@/airpower/components'
+} from '@airpower/components'
 import { InputEntity } from '@/model/wms/input/InputEntity'
 import { InputService } from '@/model/wms/input/InputService'
 import { InputStatusEnum } from '@/model/wms/input/InputStatusEnum'
-import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { InputTypeEnum } from '@/model/wms/input/InputTypeEnum'
 import { MoveStatusEnum } from '@/model/wms/move/MoveStatusEnum'
 import { PurchaseStatusEnum } from '@/model/channel/purchase/PurchaseStatusEnum'
-import { AirColor } from '@/airpower/enum/AirColor'
 import { OrderTypeEnum } from '@/model/mes/order/OrderTypeEnum'
 import { OrderStatusEnum } from '@/model/mes/order/OrderStatusEnum'
 import { TimeCell } from '@/component'
-import { airPropsId } from '@/airpower/config/AirProps'
-import { useBillDetail } from '@/hook/bill/detail/useBillDetail.ts'
-import { AirRouter } from '@/airpower/helper/AirRouter.ts'
+import { useBillDetail } from '@/hook/bill/detail/useBillDetail'
 
 const props = defineProps(airPropsId())
 const { getDetail, formData } = useBillDetail(InputEntity, InputService, {

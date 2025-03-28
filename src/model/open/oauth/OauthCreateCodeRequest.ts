@@ -1,4 +1,4 @@
-import { AirModel } from '@/airpower/base/AirModel'
+import { AirModel } from '@airpower/base/AirModel'
 
 /**
  * # Oauth 创建授权码 请求
@@ -6,12 +6,12 @@ import { AirModel } from '@/airpower/base/AirModel'
  */
 export class OauthCreateCodeRequest extends AirModel {
   /**
-   * ### AppKey
-   */
+     * ### AppKey
+     */
   appKey!: string
 
   /**
-   * ### 授权范围
-   */
+     * ### 授权范围
+     */
   scope!: string
 }

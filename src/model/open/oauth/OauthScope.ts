@@ -1,4 +1,4 @@
-import { AirModel } from '@/airpower/base/AirModel'
+import { AirModel } from '@airpower/base/AirModel'
 
 /**
  * # 授权范围
@@ -6,22 +6,22 @@ import { AirModel } from '@/airpower/base/AirModel'
  */
 export class OauthScope extends AirModel {
   /**
-   * ### 是否默认
-   */
+     * ### 是否默认
+     */
   isDefault!: boolean
 
   /**
-   * ### 名称
-   */
+     * ### 名称
+     */
   name!: string
 
   /**
-   * ### 标题
-   */
+     * ### 标题
+     */
   label!: string
 
   /**
-   * ### 描述
-   */
+     * ### 描述
+     */
   description!: string
 }

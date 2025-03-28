@@ -1,9 +1,9 @@
 /* eslint-disable no-use-before-define */
 
-import { AirEnum } from '@/airpower/base/AirEnum'
-import { AirTableAction } from '@/airpower/enum/AirTableAction'
-import { AirConfirm } from '@/airpower/feedback/AirConfirm'
-import { ClassConstructor } from '@/airpower/type/AirType'
+import { AirEnum } from '@airpower/base/AirEnum'
+import { AirTableAction } from '@airpower/enum/AirTableAction'
+import { AirConfirm } from '@airpower/feedback/AirConfirm'
+import { ClassConstructor } from '@airpower/type/AirType'
 import { AbstractBaseBillEntity } from '@/base/bill/AbstractBaseBillEntity'
 import { AbstractBaseBillService } from '@/base/bill/AbstractBaseBillService'
 import { AbstractBaseBillDetailEntity } from '@/base/bill/detail/AbstractBaseBillDetailEntity'
@@ -21,9 +21,9 @@ import { IBillTableOption } from './IBillTableOption'
  * @author Hamm.cn
  */
 export function useBillTable<
-  D extends AbstractBaseBillDetailEntity,
-  B extends AbstractBaseBillEntity<D>,
-  S extends AbstractBaseBillService<D, B>
+    D extends AbstractBaseBillDetailEntity,
+    B extends AbstractBaseBillEntity<D>,
+    S extends AbstractBaseBillService<D, B>
 >(
   entityClass: ClassConstructor<B>,
   serviceClass: ClassConstructor<S>,
@@ -96,9 +96,9 @@ export function useBillTable<
   const result = useTable(entityClass, serviceClass, option)
 
   /**
-   * ### 单据审核
-   * @param bill 单据
-   */
+     * ### 单据审核
+     * @param bill 单据
+     */
   async function onAudit(bill: B) {
     await AirConfirm.show('审核提醒', `是否确认审核选择的${result.entity.getModelName()}？`)
     await result.service.audit(bill)
@@ -106,9 +106,9 @@ export function useBillTable<
   }
 
   /**
-   * ### 单据驳回
-   * @param bill 单据
-   */
+     * ### 单据驳回
+     * @param bill 单据
+     */
   async function onReject(bill: B) {
     await AirConfirm.show('驳回提醒', `是否确认驳回选择的${result.entity.getModelName()}？`)
     bill.rejectReason = 'APP驳回'
@@ -117,9 +117,9 @@ export function useBillTable<
   }
 
   /**
-   * ### 设置单据明细都已完成
-   * @param bill 单据
-   */
+     * ### 设置单据明细都已完成
+     * @param bill 单据
+     */
   async function setBillDetailsAllFinished(bill: B) {
     await AirConfirm.show('完成提醒', `是否确认设置${result.entity.getModelName()}已完成？`)
     await result.service.setBillDetailsAllFinished(bill)
@@ -127,9 +127,9 @@ export function useBillTable<
   }
 
   /**
-   * ### 设置单据已完成
-   * @param bill 单据
-   */
+     * ### 设置单据已完成
+     * @param bill 单据
+     */
   async function setBillFinished(bill: B) {
     await AirConfirm.show('完成提醒', `是否确认设置所有${result.entity.getModelName()}明细都已完成？`)
     await result.service.setBillFinished(bill)

@@ -50,14 +50,14 @@
 import { onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, APage,
-} from '@/airpower/components'
+} from '@airpower/components'
+import { AirDateTime } from '@airpower/helper/AirDateTime'
+import { AirDateTimeFormatter } from '@airpower/enum/AirDateTimeFormatter'
 import { PlanEntity } from '@/model/mes/plan/PlanEntity'
 import { PlanService } from '@/model/mes/plan/PlanService'
 import { useBillTable } from '@/hook/bill/useBillTable'
-import { AirDateTime } from '@/airpower/helper/AirDateTime'
 import { PlanStatusEnum } from '@/model/mes/plan/PlanStatusEnum'
 import { PlanTypeEnum } from '@/model/mes/plan/PlanTypeEnum'
-import { AirDateTimeFormatter } from '@/airpower/enum/AirDateTimeFormatter'
 import { TimeCell } from '@/component'
 
 const {

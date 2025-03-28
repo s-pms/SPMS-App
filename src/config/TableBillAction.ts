@@ -1,4 +1,4 @@
-import { AirEnum } from '@/airpower/base/AirEnum'
+import { AirEnum } from '@airpower/base/AirEnum'
 
 export class TableBillAction extends AirEnum {
   static readonly AUDIT = new TableBillAction(21, '审核')

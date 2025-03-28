@@ -1,4 +1,4 @@
-import { AirEnum } from '@/airpower/base/AirEnum'
+import { AirEnum } from '@airpower/base/AirEnum'
 
 export class ParameterTypeEnum extends AirEnum {
   static QUANTITY = new ParameterTypeEnum(1, '数字')

@@ -56,16 +56,16 @@
 import { onLoad, onPullDownRefresh } from '@dcloudio/uni-app'
 import {
   ABody, ACard, ACardCell, ACardNumber,
-} from '@/airpower/components'
+} from '@airpower/components'
+import { AirColor } from '@airpower/enum/AirColor'
+import { airPropsId } from '@airpower/config/AirProps'
 import { PurchaseStatusEnum } from '@/model/channel/purchase/PurchaseStatusEnum'
-import { AirColor } from '@/airpower/enum/AirColor'
 import { PurchaseEntity } from '@/model/channel/purchase/PurchaseEntity'
 import { PurchaseService } from '@/model/channel/purchase/PurchaseService'
 import { TimeCell } from '@/component'
 import { PurchaseDetailEntity } from '@/model/channel/purchase/PurchaseDetailEntity'
 import { AppForm } from '@/config/AppForm'
 import { useBillDetail } from '@/hook/bill/detail/useBillDetail'
-import { airPropsId } from '@/airpower/config/AirProps.ts'
 
 const props = defineProps(airPropsId())
 const { getDetail, formData, addDetailFinishQuantity } = useBillDetail(PurchaseEntity, PurchaseService, {

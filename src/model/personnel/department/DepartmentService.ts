@@ -1,6 +1,4 @@
-import {
-  AbstractBaseService,
-} from '../../../../../../airpower/airpower-starter/AirPowerWebStarter/src/base/AbstractBaseService'
+import { AbstractBaseService } from '@airpower/airpower-starter/AirPowerWebStarter/src/base/AbstractBaseService'
 import { DepartmentEntity } from './DepartmentEntity'
 
 /**

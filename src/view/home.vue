@@ -35,10 +35,10 @@
 <script lang="ts" setup>
 import { onLoad, onPullDownRefresh } from '@dcloudio/uni-app'
 import { ref } from 'vue'
+import { ABody } from '@airpower/components'
 import { AppConfig } from '@/config/AppConfig'
 import { UserService } from '@/model/personnel/user/UserService'
 import { MenuEntity } from '@/model/system/menu/MenuEntity'
-import { ABody } from '@/airpower/components'
 
 const moduleList = ref<MenuEntity[]>([])
 
